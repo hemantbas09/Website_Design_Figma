@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Website Design</title>
+  </head>
+  <body>
+    <!-- Header of the Website -->
+    <header class="header-content">
+      <section class="header-section">
+        <nav class="navbar">
+          <div class="logo-container">
+            <a class="logo-wrap" href="#">
+              <img class="logo" src="Logo.svg" alt="Logo" />
+            </a>
+            <a class="logo-text-wrap" href="#">
+              <img class="logo-text" src="logo-text.svg" alt="Untitled UI" />
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a class="anchor-tag" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="anchor-tag" href="#"
+                >Product
+                <button class="btn-secondary">
+                  <img
+                    class="dropdown-icon"
+                    src="dropdownicon.svg"
+                    alt="Dropdown Icon"
+                  /></button
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="anchor-tag" href="#"
+                >Resources
+                <button class="btn-secondary">
+                  <img
+                    class="dropdown-icon"
+                    src="dropdownicon.svg"
+                    alt="Dropdown Icon"
+                  />
+                </button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="anchor-tag" href="#">Pricing</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="btn btn-secondary" aria-label="Menu">
+          <img
+            class="hamburger-icon"
+            src="hamburgerIcon.svg"
+            alt="Hamburger Icon"
+          />
+        </button>
+
+        <!-- call to action button -->
+        <div class="cta-buttons">
+          <a
+            class="anchor-tag primary-anchor-tag btn-secondary btn-text"
+            href="#"
+            >Login</a
+          >
+          <a class="anchor-tag btn btn-primary btn-text" href="#">Signup</a>
+        </div>
+      </section>
+    </header>
+
+    <!-- Content -->
+    <main class="main">
+      <section class="login-section">
+        <div class="login-container">
+          <div class="heading-section">
+            <img class="content-logo" src="Logo.svg" alt="content logo" />
+            <h2 class="heading">Log in to your account</h2>
+            <p class="subheading">Welcome back! Please enter your details.</p>
+          </div>
+
+          <form action="" method="POST" class="login-form">
+            <label class="email-label label" for="email">Email</label>
+            <input
+              class="input input-text"
+              type="email"
+              name="password"
+              id="password"
+              placeholder="Enter your email"
+              required
+            />
+            <label class="password-label label" for="password">Password</label>
+            <input
+              class="input input-text"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••"
+              required
+            />
+            <div class="label checkbox-forgotpassword">
+              <div class="checkbox-container">
+                <input class="checkbox" type="checkbox" />
+                <label for="">Remember for 30 days</label>
+              </div>
+
+              <a class="anchor-tag primary-anchor-tag" href="#"
+                >Forgot Password</a
+              >
+            </div>
+            <input
+              class="signin-submit-btn btn btn-primary btn-text"
+              type="submit"
+              value="Sign in"
+            />
+          </form>
+
+          <a
+            class="anchor-tag btn social-media-login btn-tertary btn-text"
+            href="#"
+            ><img src="Social icon.svg" alt="google" /> Sign in with Google
+          </a>
+          <p class="no-account">
+            Don’t have an account?
+            <a class="anchor-tag primary-anchor-tag" href="">Sign up</a>
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
