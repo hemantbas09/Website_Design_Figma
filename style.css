@@ -117,7 +117,7 @@ li {
 
 /*------------------- login Section----------------- */
 
-.login-section {
+.section {
   padding: 48px 16px 212px 16px;
   width: 100%;
   max-width: 392px;
@@ -139,6 +139,11 @@ li {
   justify-content: center;
   margin-bottom: 12px;
 }
+.signup-heading-section {
+  align-items: start;
+  width: 100%;
+}
+
 .heading {
   font-weight: 600;
   font-size: 24px;
