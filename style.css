@@ -11,7 +11,7 @@
   color: #667085;
   font-weight: 600;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
 }
 .primary-anchor-tag {
   color: #7f56d9;
@@ -20,6 +20,10 @@
 .btn {
   padding: 10px 18px;
   border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
 }
 .btn-primary {
   background: #7f56d9;
@@ -29,6 +33,7 @@
 .btn-secondary {
   background-color: transparent;
   border: none;
+  color: #7f56d9;
   padding: 0px;
 }
 .btn-tertary {
@@ -37,12 +42,6 @@
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
 }
 
-.btn-text {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-}
 li {
   list-style: none;
 }
@@ -119,16 +118,13 @@ li {
 /*------------------- login Section----------------- */
 
 .login-section {
-  margin: 48px 16px 212px 16px;
-}
-.login-container {
+  padding: 48px 16px 212px 16px;
   width: 100%;
-  max-width: 360px;
+  max-width: 392px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
 }
 
 .content-logo {
@@ -158,9 +154,10 @@ li {
   padding-top: 8px;
 }
 
-.login-form {
+.form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .label {
   font-weight: 500;
@@ -171,17 +168,14 @@ li {
 }
 
 .input {
-  height: 44px;
   padding: 10px 14px;
   margin-top: 6px;
   border: 1px solid #d0d5dd;
   border-radius: 8px;
-}
-
-.input-text {
   line-height: 24px;
   font-size: 16px;
   color: #667085;
+  background-color: transparent;
 }
 
 .input:focus {
@@ -189,7 +183,7 @@ li {
   outline: #7f56d9;
 }
 
-.checkbox-forgotpassword {
+.forgot-password-checkbox-container {
   display: flex;
   margin-top: 26px;
   align-items: center;
@@ -206,21 +200,34 @@ li {
   height: 16px;
 }
 
-.signin-submit-btn {
-  margin-top: 24px;
+.select option {
+  background-color: transparent;
+}
+.form-field-group {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border: none;
+  gap: 40px;
 }
 
-.social-media-login {
+.signin-submit-btn {
+  margin-top: 16px;
+}
+
+.social-media-btn {
   margin-top: 28px;
-  /* width: 100%; */
-  margin-bottom: 32px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
 }
-
-.no-account {
+.existing-account {
+  margin-top: 32px;
+}
+.information-text {
+  margin-top: 6px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -229,6 +236,19 @@ li {
 
 /* For tablet view: */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-color: lightblue;
+  }
+  .login-container {
+    align-items: start;
+  }
+  .heading-section {
+    align-items: start;
+    justify-content: center;
+  }
+  .information-text {
+    align-self: center;
+  }
 }
 
 /*------------- for laptop view:--------------- */
@@ -248,9 +268,9 @@ li {
 
   .dropdown-icon {
     width: 10px;
-    height: 5px;
     margin-left: 13px;
     margin-right: 37px;
+    align-self: center;
   }
 
   .cta-buttons {

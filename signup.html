@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <title>Website Design</title>
+    <title>Signup</title>
   </head>
   <body>
     <!-- Header of the Website -->
@@ -70,7 +69,7 @@
 
         <!-- call to action button -->
         <div class="cta-buttons">
-          <a class="anchor-tag primary-anchor-tag" href="#">Login</a>
+          <a class="anchor-tag primary-anchor-tag" href="index.html">Login</a>
           <a class="anchor-tag btn btn-primary" href="signup.html">Signup</a>
         </div>
       </section>
@@ -81,12 +80,22 @@
       <section class="login-section">
         <div class="heading-section">
           <img class="content-logo" src="Logo.svg" alt="content logo" />
-          <h2 class="heading">Log in to your account</h2>
-          <p class="subheading">Welcome back! Please enter your details.</p>
+          <h2 class="heading">Create an account</h2>
+          <p class="subheading">Start your 30-day free trial</p>
         </div>
 
         <form action="" method="POST" class="form">
-          <label class="label" for="email">Email</label>
+          <label class="label" for="full-name">Name*</label>
+          <input
+            class="input"
+            type="text"
+            name="full-name"
+            id="full-name"
+            placeholder="Enter your name"
+            required
+          />
+
+          <label class="label" for="email">Email*</label>
           <input
             class="input"
             type="email"
@@ -96,7 +105,7 @@
             required
           />
 
-          <label class="label" for="password">Password</label>
+          <label class="label" for="password">Password*</label>
           <input
             class="input"
             type="password"
@@ -105,34 +114,80 @@
             placeholder="••••••••"
             required
           />
+          <p class="information-text">Must be at least 8 characters.</p>
 
-          
-          <div class="label forgot-password-checkbox-container">
-            <div class="checkbox-container">
-              <input class="checkbox" type="checkbox" />
-              <label for="">Remember for 30 days</label>
+          <label class="label" for="password">Confirm Password*</label>
+          <input
+            class="input"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="••••••••"
+            required
+          />
+          <label class="label" for="date-of-birth">Date of Birth</label>
+          <input
+            class="input"
+            type="Date"
+            name="date-of-birth"
+            id="date-of-birth"
+          />
+
+          <label class="label" for="male">Gender</label>
+          <fieldset class="input form-field-group">
+            <div>
+              <label for="">Male</label>
+              <input type="radio" name="gender" id="male" value="male" />
             </div>
+            <div>
+              <label for="female">Female</label>
+              <input type="radio" name="gender" id="female" value="female" />
+            </div>
+            <div>
+              <label for="other">Other</label>
+              <input type="radio" name="gender" id="other" value="other" />
+            </div>
+          </fieldset>
 
-            <a class="anchor-tag primary-anchor-tag" href="#"
-              >Forgot Password</a
-            >
-          </div>
+          <label for="city-select" class="label">Select a City*</label>
+          <select id="city-select" class="input select">
+            <option value="kathmandu" selected>Kathmandu</option>
+            <option value="pokhara">Pokhara</option>
+            <option value="biratnagar">Biratnagar</option>
+            <option value="dharan">Dharan</option>
+            <option value="bharatpur">Bharatpur</option>
+            <option value="butwal">Butwal</option>
+            <option value="nepalgunj">Nepalgunj</option>
+            <option value="hetauda">Hetauda</option>
+            <option value="itahari">Itahari</option>
+            <option value="janakpur">Janakpur</option>
+          </select>
+
+          <label for="description" class="label">Description*</label>
+          <textarea
+            class="input"
+            name="description"
+            id="description"
+            cols="30"
+            rows="10"
+            placeholder="Describe Yourself"
+          ></textarea>
+
           <input
             class="signin-submit-btn btn btn-primary"
             type="submit"
-            value="Sign in"
+            value="Create account"
           />
         </form>
 
         <a class="anchor-tag btn social-media-btn btn-tertary" href="#"
-          ><img src="Social icon.svg" alt="google" /> Sign in with Google
+          ><img src="Social icon.svg" alt="google" /> Sign up with Google
         </a>
-
         <div class="existing-account">
           <p class="information-text">
-            Don’t have an account?
-            <a class="anchor-tag primary-anchor-tag" href="signup.html"
-              >Sign up</a
+            Already have an account?
+            <a class="anchor-tag primary-anchor-tag" href="index.html"
+              >Log in</a
             >
           </p>
         </div>
