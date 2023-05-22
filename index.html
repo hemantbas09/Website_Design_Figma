@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +18,7 @@
     <header class="header-content">
       <section class="header-section">
         <nav class="navbar">
-          <a class="logo-container" href="#">
+          <a class="logo-container" href="signup.html">
             <div class="logo-wrap">
               <img class="logo" src="Logo.svg" alt="Logo" />
             </div>
@@ -60,7 +59,7 @@
           </ul>
         </nav>
 
-        <button class="btn btn-secondary" aria-label="Menu">
+        <button class="nostyle-btn" aria-label="Menu">
           <img
             class="hamburger-icon"
             src="hamburgerIcon.svg"
@@ -70,7 +69,7 @@
 
         <!-- call to action button -->
         <div class="cta-buttons">
-          <a class="anchor-tag " href="#">Login</a>
+          <a class="anchor-tag" href="index.html">Login</a>
           <a class="anchor-tag btn btn-primary" href="signup.html">Signup</a>
         </div>
       </section>
@@ -79,6 +78,7 @@
     <!-- Content -->
     <main class="main">
       <section class="section">
+        <!-- Heading Section -->
         <div class="heading-section">
           <img class="content-logo" src="Logo.svg" alt="content logo" />
           <h2 class="heading">Log in to your account</h2>
@@ -86,44 +86,47 @@
         </div>
 
         <form action="" method="POST" class="form">
-          <label class="label" for="email">Email</label>
-          <input
-            class="input"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Enter your email"
-            required
-          />
+          <!-- Iinput area of the login -->
+          <div class="input-container">
+            <label class="label" for="email">Email</label>
+            <input
+              class="input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-          <label class="label" for="password">Password</label>
-          <input
-            class="input"
-            type="password"
-            name="password"
-            id="password"
-            placeholder="••••••••"
-            required
-          />
+          <div class="input-container">
+            <label class="label" for="password">Password</label>
+            <input
+              class="input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••"
+              required
+            />
+          </div>
 
           <div class="label forgot-password-checkbox-container">
             <div class="checkbox-container">
               <input class="checkbox" type="checkbox" />
               <label for="">Remember for 30 days</label>
             </div>
-
             <a class="anchor-tag primary-anchor-tag" href="#"
-              >Forgot Password</a
-            >
+              >Forgot password
+            </a>
           </div>
-          <input
-            class="signin-submit-btn btn btn-primary"
-            type="submit"
-            value="Sign in"
-          />
+
+          <button class="signin-submit-btn btn btn-primary" type="submit">
+            Sign in
+          </button>
         </form>
 
-        <a class="anchor-tag btn social-media-btn btn-tertary" href="#"
+        <a class="anchor-tag btn social-media-btn btn-outline" href="#"
           ><img src="Social icon.svg" alt="google" /> Sign in with Google
         </a>
 
