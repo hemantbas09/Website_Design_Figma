@@ -76,6 +76,7 @@ li {
 .btn-outline {
     background: var(--white);
     border: 1px solid #d0d5dd;
+    color: #344054;
 }
 
 .btn-outline:hover {
