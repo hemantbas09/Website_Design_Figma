@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/common-style.css">
+
+</head>
+
+<body>
+
+
+  <!-- Header of the Website -->
+  <div class="dashboard">
+
+    <section class="header-sidebar-section">
+      <header class="header-content">
+        <section class="header-section header-with-sidebar">
+
+          <!-- Navmenu -->
+          <nav class="navbar">
+            <a class="logo-container" href="signup.html">
+              <div class="logo-wrap">
+                <img class="logo" src="../Image/Logo.svg" alt="Logo" />
+              </div>
+              <div class="logo-text-wrap">
+                <img class="logo-text" src="../Image/logo-text.svg" alt="Untitled UI" />
+              </div>
+            </a>
+          </nav>
+
+          <!-- Hamberguage Menu -->
+          <button class="nostyle-btn" aria-label="Menu">
+            <img class="hamburger-icon" src="../Image/hamburgerIcon.svg" alt="Hamburger Icon" />
+          </button>
+
+        </section>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+
+        <form action="" class="search-container sidebar-search">
+          <img class="search-icon" src="../Image/search.svg" alt="search-icon">
+          <input class="input search" type="text" placeholder="Search">
+        </form>
+
+        <ul class="side-menu">
+
+          <li class="sidemenu-item">
+            <a class="sidebar-link" href="#">
+              <div class="sidemenu-content">
+                <img src="../SidebarIcon/home-icon.svg" alt="home-icon">
+                <p>Home</p>
+              </div>
+              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+            </a>
+          </li>
+
+          <li class="sidemenu-item">
+            <a class="sidebar-link" href="#">
+              <div class="sidemenu-content">
+                <img src="../SidebarIcon/dashboard-icon.svg" alt="">
+                <p>Dashboard</p>
+              </div>
+              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+            </a>
+          </li>
+
+          <li class="sidemenu-item">
+            <a class="sidebar-link" href="#">
+              <div class="sidemenu-content">
+                <img src="../SidebarIcon/project-icon.svg" alt="">
+                <p>Projects</p>
+              </div>
+              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+            </a>
+          </li>
+
+          <li class="sidemenu-item">
+            <a class="sidebar-link" href="#">
+              <div class="sidemenu-content">
+                <img class="sidemenu-icon" src="../SidebarIcon/task-icon.svg" alt="">
+                <p> Tasks</p>
+              </div>
+              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+            </a>
+          </li>
+
+          <li class="sidemenu-item">
+            <a class="sidebar-link" href="#">
+              <div class="sidemenu-content">
+                <img src="../SidebarIcon/reporting-icon.svg" alt="">
+
+                <p>Reporting</p>
+              </div>
+              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+            </a>
+          </li>
+
+          <li class="sidemenu-item">
+            <a class="sidebar-link" href="#">
+              <div class="sidemenu-content">
+                <img src="../SidebarIcon/user-icon.svg" alt="">
+                <p>Users</p>
+              </div>
+              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="sidebar-footer">
+          <ul class="sidefooter-navmenu">
+
+            <li>
+              <a class="sidebar-link sidemenu-content" href="#">
+                <img src="../SidebarIcon/support-icon.svg" alt="support-icon">
+                Support
+              </a>
+            </li>
+
+            <li>
+              <a class="sidebar-link sidemenu-content primary-anchor-tag " href="#">
+                <img src="../SidebarIcon/seeting-icon.svg" alt="settings-icon">
+                Settings
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="used-space">
+            <h4 class="used-space-heading">Used space</h4>
+
+            <p class="used-space-description">
+              Your team has used 80% of your available space. Need more?
+            </p>
+
+            <div class="progressive-box side-progressivebar">
+              <div class="progressive-bar "></div>
+            </div>
+
+            <div class="used-space-action">
+              <button class="nostyle-btn btn-icon" style="color: #9E77ED;">Dismiss</button>
+              <button class="nostyle-btn btn-icon" style="color: #6941C6;">Upgrade plan</button>
+            </div>
+          </div>
+
+          <div class="user-profile">
+            <div class="profile-picture">
+              <img src="../SidebarIcon/profile-picture.jpg" alt="profile-picture">
+              <div class="">
+                <h2 class="profile-heading">Name</h2>
+                <p class="profile-email">olivia@untitledui.com</p>
+              </div>
+            </div>
+
+            <button class="nostyle-btn logout-btn">
+              <img src="../SidebarIcon/logout-icon.svg" alt="logout-icon">
+            </button>
+
+          </div>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- Content -->
+    <main class="dashboard-main">
+      <div class="dashboard-heading-container">
+        <div class="dashboard-heading">
+          <h1 class="dashboard-heading-title">Welcome back, Olivia</h1>
+          <p class="dashboard-sub-heading">Track, manage and forecast your customers and orders.</p>
+        </div>
+
+        <div class="dashboard-cta-button">
+          <button class="btn btn-icon btn-outline">
+            <img src="../Image/upload-icon.svg" alt="upload-icon">
+            Import
+          </button>
+          <button class="btn btn-icon btn-primary">
+            <img src="../Image/add-icon.svg" alt="add-icon">
+            Add
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="card-container">
+
+        <div class="card">
+
+          <div class="card-header">
+            <h2 class="card-heading">Total customers</h2>
+            <button class="nostyle-btn">
+              <img src="../Image/dot-icon.svg" alt="dot-icon">
+            </button>
+          </div>
+
+          <div class="card-body">
+            <div class="number-badge">
+              <h3 class="card-text">2,420</h3>
+              <p class="card-message">
+                <img src="../Image/up-arrow.svg" alt="">
+                <span class="success"> 40% </span> vs last month
+              </p>
+            </div>
+
+            <img src="../Image/up-line.svg" alt="graph">
+
+          </div>
+        </div>
+
+        <div class="card">
+
+          <div class="card-header">
+            <h2 class="card-heading">Members</h2>
+            <button class="nostyle-btn">
+              <img src="../Image/dot-icon.svg" alt="dot-icon">
+            </button>
+          </div>
+
+          <div class="card-body">
+            <div class="number-badge">
+              <h3 class="card-text">1,210</h3>
+              <p class="card-message">
+                <img src="../Image/down-arrow.svg" alt="">
+                <span class="error"> 10% </span> vs last month
+              </p>
+            </div>
+
+            <img src="../Image/down-line.svg" alt="graph">
+          </div>
+        </div>
+
+        <div class="card">
+
+          <div class="card-header">
+            <h2 class="card-heading">Active now</h2>
+            <button class="nostyle-btn">
+              <img src="../Image/dot-icon.svg" alt="dot-icon">
+            </button>
+          </div>
+
+          <div class="card-body">
+
+            <div class="number-badge">
+              <h3 class="card-text">316</h3>
+              <p class="card-message">
+                <img src="../Image/up-arrow.svg" alt="">
+                <span class="success"> 20% </span> vs last month
+              </p>
+            </div>
+
+            <img src="../Image/up-line.svg" alt="graph">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="searchfilter-wrapper">
+
+        <form action="" class="search-container">
+          <img class="search-icon" src="../Image/search.svg" alt="">
+          <input class="input search" type="text" placeholder="Search">
+        </form>
+        <div class="filter-container">
+          <button class="btn btn-icon btn-outline  full-btn">
+            <img src="../Image/filtericon.svg" alt="">
+            Edit filters
+          </button>
+
+          <div class="filter-group">
+            <p class="filter-item">All time <button class="nostyle-btn"> <img src="../Image/cross-ison.svg" alt="">
+              </button></p>
+            <p class="filter-item">US,AU,+4 <button class="nostyle-btn"> <img src="../Image/cross-ison.svg" alt="">
+              </button> </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr class="table-heading">
+              <th>Company</th>
+              <th>License use</th>
+              <th>Status</th>
+              <th>Users</th>
+              <th>About</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table-titlebox">
+                <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                <div>
+                  <h2 class="table-title">Catalog</h2>
+                  <h3 class="company-info">catalogapp.io</h3>
+                </div>
+              </td>
+              <td>
+                <div class="progressive-box">
+                  <div class="progressive-bar "></div>
+                </div>
+              </td>
+              <td>
+                <p class="status">Customer</p>
+
+              </td>
+              <td class="avatar-container">
+
+                <div class="avatar">
+                  <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
+                </div>
+                <div class="avatar">
+                  <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
+                </div>
+                <div class="avatar">
+                  <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
+                </div>
+                <div class="avatar">
+                  <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
+                </div>
+                <div class="avatar">
+                  <span class="avatar-number">+8</span>
+
+
+              </td>
+              <td>
+                <p>Content curating app</p>
+                <p>Brings all your news into one place</p>
+              </td>
+              <td class="table-act-btn">
+                <button class="nostyle-btn">
+                  <img src="../Image/delete-icon.svg" alt="delete-icon">
+                </button>
+                <button class="nostyle-btn">
+                  <img src="../Image/edit-icon.svg" alt="edit-icon">
+                </button>
+
+
+              </td>
+            </tr>
+            <tr>
+              <td>Nepal</td>
+              <td>Nepal</td>
+              <td>Kathmandu</td>
+              <td>Lalitpur</td>
+              <td>Salitpur</td>
+              <td>Ralitpur</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+
+</html>
