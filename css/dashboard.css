@@ -304,11 +304,29 @@
 
 }
 
+.table-section {
+    margin: 0px 16px 96px 16px;
+    overflow: auto;
+}
+
+.table-container {
+    border: 1px solid #EAECF0;
+    box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+    border-radius: 8px;
+    min-width: 1300px;
+}
+
+.display {
+    display: none;
+}
+
 .table {
     background: #FFFFFF;
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 12px;
+
+
 }
 
 .table-heading {
@@ -338,6 +356,13 @@ tbody>tr:nth-child(2n+1) {
 
 .table-titlebox {
     display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.thead-item {
+    display: flex;
+    align-items: center;
     gap: 12px;
 }
 
@@ -379,16 +404,50 @@ th {
 }
 
 td {
-    padding: 25px 24px;
-    /* border: 1px solid #027A48; */
+    padding: 25px 50px;
+    /* border: 2px solid red; */
 
 }
 
 td,
 th {
-    border-bottom: 1px solid #EAECF0;
+    /* border-bottom: 1px solid #EAECF0; */
 }
 
+.table-chechkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.thead-checkbox:checked::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../userAvatar/checked.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.tbody-checkbox:checked::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../userAvatar/unchecked.svg) no-repeat center / contain;
+}
+
+.table-chechkbox:checked {
+    border: 2px solid purple;
+}
 
 
 .table-act-btn {
@@ -434,7 +493,7 @@ th {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0px 24px 16px 24px;
+    margin: 0px 50px 16px 50px;
 }
 
 .pagination-btn {
@@ -515,12 +574,8 @@ th {
         width: auto;
     }
 
-    .table-container {
-        border: 1px solid #EAECF0;
-        box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
-        border-radius: 8px;
-        margin: 0px 16px 0px 16px;
-
-
+    .pagination {
+        margin-right:80px ;
     }
+
 }
