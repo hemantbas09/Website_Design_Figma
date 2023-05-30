@@ -106,7 +106,7 @@ li {
     align-items: center;
     margin: auto;
     justify-content: space-between;
-    padding-left: 16px;
+    padding: 0px 16px 0px 16px;
 
 }
 
@@ -117,12 +117,13 @@ li {
 
 .logo-container {
     display: flex;
-    align-items: center;
 }
 
 .logo-wrap {
     width: 32px;
     height: 32px;
+    margin-right: 10px;
+
 }
 
 .logo {
@@ -132,13 +133,13 @@ li {
 
 .logo-text-wrap {
     width: 100px;
-    height: 16px;
+    height: 16p/* margin-left: 10px; */x;
 }
 
 .logo-text {
     width: 100%;
     height: 100%;
-    margin-left: 10px;
+    
 }
 
 .nav-menu,
@@ -187,13 +188,12 @@ li {
 
 .search-container {
     position: relative;
-    display: flex;
-    align-items: center;
 }
 
 .search-icon {
     position: absolute;
     left: 17px;
+    top: 15px;
 }
 
 .search {

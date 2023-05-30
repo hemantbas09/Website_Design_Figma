@@ -15,119 +15,123 @@
 
 <body>
 
+  <!-- Header of the website -->
+  <header class="header-content headerwith-sidebar">
+    <section class="header-section">
 
-  <!-- Header of the Website -->
+      <button class="nostyle-btn" aria-label="Menu">
+        <img class="hamburger-icon" src="../Image/hamburgerIcon.svg" alt="Hamburger Icon" />
+      </button>
+
+      <nav class="navbar">
+        <a class="logo-container" href="signup.html">
+          <div class="logo-wrap">
+            <img class="logo" src="../Image/Logo.svg" alt="Logo" />
+          </div>
+          <div class="logo-text-wrap">
+            <img class="logo-text" src="../Image/logo-text.svg" alt="Untitled UI" />
+          </div>
+        </a>
+      </nav>
+
+    </section>
+  </header>
+
   <div class="dashboard">
 
-    <section class="header-sidebar-section">
-      <header class="header-content">
-        <section class="header-section header-with-sidebar">
-
-          <!-- Navmenu -->
-          <nav class="navbar">
-            <a class="logo-container" href="signup.html">
-              <div class="logo-wrap">
-                <img class="logo" src="../Image/Logo.svg" alt="Logo" />
-              </div>
-              <div class="logo-text-wrap">
-                <img class="logo-text" src="../Image/logo-text.svg" alt="Untitled UI" />
-              </div>
-            </a>
-          </nav>
-
-          <!-- Hamberguage Menu -->
-          <button class="nostyle-btn" aria-label="Menu">
-            <img class="hamburger-icon" src="../Image/hamburgerIcon.svg" alt="Hamburger Icon" />
-          </button>
-
-        </section>
-      </header>
-
-      <!-- Sidebar -->
+    <!-- Sidebar -->
+    <section class="sidebar-section">
       <aside class="sidebar">
 
-        <form action="" class="search-container sidebar-search">
-          <img class="search-icon" src="../Image/search.svg" alt="search-icon">
-          <input class="input search" type="text" placeholder="Search">
-        </form>
+        <a class="logo-container sidebar-logo" href="signup.html">
+          <div class="logo-wrap">
+            <img class="logo" src="../Image/Logo.svg" alt="Logo" />
+          </div>
+          <div class="logo-text-wrap">
+            <img class="logo-text" src="../Image/logo-text.svg" alt="Untitled UI" />
+          </div>
+        </a>
+        <div class="sidebar-top">
+          <form action="" class="search-container sidebar-search">
+            <img class="search-icon" src="../Image/search.svg" alt="search-icon">
+            <input class="input search" type="text" placeholder="Search">
+          </form>
 
-        <ul class="side-menu">
-
-          <li class="sidemenu-item">
-            <a class="sidebar-link" href="#">
-              <div class="sidemenu-content">
-                <img src="../SidebarIcon/home-icon.svg" alt="home-icon">
-                <p>Home</p>
-              </div>
-              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
-            </a>
-          </li>
-
-          <li class="sidemenu-item">
-            <a class="sidebar-link" href="#">
-              <div class="sidemenu-content">
-                <img src="../SidebarIcon/dashboard-icon.svg" alt="">
-                <p>Dashboard</p>
-              </div>
-              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
-            </a>
-          </li>
-
-          <li class="sidemenu-item">
-            <a class="sidebar-link" href="#">
-              <div class="sidemenu-content">
-                <img src="../SidebarIcon/project-icon.svg" alt="">
-                <p>Projects</p>
-              </div>
-              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
-            </a>
-          </li>
-
-          <li class="sidemenu-item">
-            <a class="sidebar-link" href="#">
-              <div class="sidemenu-content">
-                <img class="sidemenu-icon" src="../SidebarIcon/task-icon.svg" alt="">
-                <p> Tasks</p>
-              </div>
-              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
-            </a>
-          </li>
-
-          <li class="sidemenu-item">
-            <a class="sidebar-link" href="#">
-              <div class="sidemenu-content">
-                <img src="../SidebarIcon/reporting-icon.svg" alt="">
-
-                <p>Reporting</p>
-              </div>
-              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
-            </a>
-          </li>
-
-          <li class="sidemenu-item">
-            <a class="sidebar-link" href="#">
-              <div class="sidemenu-content">
-                <img src="../SidebarIcon/user-icon.svg" alt="">
-                <p>Users</p>
-              </div>
-              <img src="../Image/dropdownicon.svg" alt="dropdownicon">
-            </a>
-          </li>
-
-        </ul>
-
-        <div class="sidebar-footer">
-          <ul class="sidefooter-navmenu">
+          <ul class="side-menu">
 
             <li>
-              <a class="sidebar-link sidemenu-content" href="#">
+              <a class="sidemenu-item" href="#">
+                <div class="sidemenu-content">
+                  <img src="../SidebarIcon/home-icon.svg" alt="home-icon">
+                  <p>Home</p>
+                </div>
+                <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+              </a>
+            </li>
+
+            <li>
+              <a class="sidemenu-item" href="#">
+                <div class="sidemenu-content">
+                  <img src="../SidebarIcon/dashboard-icon.svg" alt="">
+                  <p>Dashboard</p>
+                </div>
+                <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+              </a>
+            </li>
+
+            <li>
+              <a class="sidemenu-item" href="#">
+                <div class="sidemenu-content">
+                  <img src="../SidebarIcon/project-icon.svg" alt="">
+                  <p>Projects</p>
+                </div>
+                <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+              </a>
+            </li>
+
+            <li>
+              <a class="sidemenu-item" href="#">
+                <div class="sidemenu-content">
+                  <img class="sidemenu-icon" src="../SidebarIcon/task-icon.svg" alt="">
+                  <p> Tasks</p>
+                </div>
+                <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+              </a>
+            </li>
+
+            <li>
+              <a class="sidemenu-item" href="#">
+                <div class="sidemenu-content">
+                  <img src="../SidebarIcon/reporting-icon.svg" alt="">
+
+                  <p>Reporting</p>
+                </div>
+                <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+              </a>
+            </li>
+
+            <li>
+              <a class="sidemenu-item" href="#">
+                <div class="sidemenu-content">
+                  <img src="../SidebarIcon/user-icon.svg" alt="">
+                  <p>Users</p>
+                </div>
+                <img src="../Image/dropdownicon.svg" alt="dropdownicon">
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="sidefooter-navmenu">
+            <li>
+              <a class="sidemenu-item sidemenu-content" href="#">
                 <img src="../SidebarIcon/support-icon.svg" alt="support-icon">
                 Support
               </a>
             </li>
 
             <li>
-              <a class="sidebar-link sidemenu-content primary-anchor-tag " href="#">
+              <a class="sidemenu-item sidemenu-content primary-anchor-tag " href="#">
                 <img src="../SidebarIcon/seeting-icon.svg" alt="settings-icon">
                 Settings
               </a>
@@ -147,28 +151,32 @@
             </div>
 
             <div class="used-space-action">
-              <button class="nostyle-btn btn-icon" style="color: #9E77ED;">Dismiss</button>
-              <button class="nostyle-btn btn-icon" style="color: #6941C6;">Upgrade plan</button>
+              <button class="nostyle-btn btn-icon remove-plan" style="color: #9E77ED;">Dismiss</button>
+              <button class="nostyle-btn btn-icon upgrade-plan" style="color: #6941C6;">Upgrade plan</button>
             </div>
           </div>
 
-          <div class="user-profile">
-            <div class="profile-picture">
-              <img src="../SidebarIcon/profile-picture.jpg" alt="profile-picture">
-              <div class="">
-                <h2 class="profile-heading">Name</h2>
-                <p class="profile-email">olivia@untitledui.com</p>
-              </div>
-            </div>
-
-            <button class="nostyle-btn logout-btn">
-              <img src="../SidebarIcon/logout-icon.svg" alt="logout-icon">
-            </button>
-
-          </div>
         </div>
-      </aside>
+        <div class="sidebar-footer">
 
+          <div class="account">
+            <div class="profile-container">
+              <img class="profile-picture" src="../SidebarIcon/profile-picture.jpg" alt="profile-picture">
+            </div>
+            <div>
+              <h2 class="profile-heading">Olivia</h2>
+              <p class="profile-email">olivia@untitledui.com</p>
+            </div>
+          </div>
+
+          <button class="nostyle-btn logout-btn">
+            <img src="../SidebarIcon/logout-icon.svg" alt="logout-icon">
+          </button>
+
+
+        </div>
+
+      </aside>
     </section>
 
     <!-- Content -->
@@ -208,7 +216,7 @@
             <div class="number-badge">
               <h3 class="card-text">2,420</h3>
               <p class="card-message">
-                <img src="../Image/up-arrow.svg" alt="">
+                <img src="../Image/up-arrow.svg" alt="arrow-icon">
                 <span class="success"> 40% </span> vs last month
               </p>
             </div>
@@ -231,7 +239,7 @@
             <div class="number-badge">
               <h3 class="card-text">1,210</h3>
               <p class="card-message">
-                <img src="../Image/down-arrow.svg" alt="">
+                <img src="../Image/down-arrow.svg" alt="arrow-icon">
                 <span class="error"> 10% </span> vs last month
               </p>
             </div>
@@ -254,7 +262,7 @@
             <div class="number-badge">
               <h3 class="card-text">316</h3>
               <p class="card-message">
-                <img src="../Image/up-arrow.svg" alt="">
+                <img src="../Image/up-arrow.svg" alt="arrow-icon">
                 <span class="success"> 20% </span> vs last month
               </p>
             </div>
@@ -279,9 +287,11 @@
           </button>
 
           <div class="filter-group">
-            <p class="filter-item">All time <button class="nostyle-btn"> <img src="../Image/cross-ison.svg" alt="">
+            <p class="filter-item">All time <button class="nostyle-btn"> <img src="../Image/cross-ison.svg"
+                  alt="cross-icon">
               </button></p>
-            <p class="filter-item">US,AU,+4 <button class="nostyle-btn"> <img src="../Image/cross-ison.svg" alt="">
+            <p class="filter-item">US,AU,+4 <button class="nostyle-btn"> <img src="../Image/cross-ison.svg"
+                  alt="cross-icon">
               </button> </p>
           </div>
 
@@ -302,20 +312,22 @@
                   <th>Status</th>
                   <th>Users</th>
                   <th>About</th>
-                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
+             
                 <tr>
-                  <td class="table-titlebox">
-                    <input class="table-chechkbox thead-checkbox" type="checkbox">
-                    <img src="../Image/compeny-logo1.svg" alt="company-logo">
-                    <div>
-                      <h2 class="table-title">Catalog</h2>
-                      <h3 class="company-info">catalogapp.io</h3>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
                     </div>
                   </td>
-                  <td>
+                  <td class="table-col">
                     <div class="progressive-box">
                       <div class="progressive-bar "></div>
                     </div>
@@ -324,50 +336,54 @@
                     <p class="status">Customer</p>
 
                   </td>
-                  <td class="avatar-container">
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
 
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <span class="avatar-number">+8</span>
-
-
+                      </div>
                   </td>
                   <td>
-                    <p>Content curating app</p>
-                    <p>Brings all your news into one place</p>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
                   </td>
-                  <td class="table-act-btn">
-                    <button class="nostyle-btn">
-                      <img src="../Image/delete-icon.svg" alt="delete-icon">
-                    </button>
-                    <button class="nostyle-btn">
-                      <img src="../Image/edit-icon.svg" alt="edit-icon">
-                    </button>
-
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
 
                   </td>
                 </tr>
                 <tr>
-                  <td class="table-titlebox">
-                    <input class="table-chechkbox thead-checkbox" type="checkbox">
-                    <img src="../Image/compeny-logo1.svg" alt="company-logo">
-                    <div>
-                      <h2 class="table-title">Catalog</h2>
-                      <h3 class="company-info">catalogapp.io</h3>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
                     </div>
                   </td>
-                  <td>
+                  <td class="table-col">
                     <div class="progressive-box">
                       <div class="progressive-bar "></div>
                     </div>
@@ -376,47 +392,216 @@
                     <p class="status">Customer</p>
 
                   </td>
-                  <td class="avatar-container">
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
 
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <span class="avatar-number">+8</span>
-
-
+                      </div>
                   </td>
                   <td>
-                    <p>Content curating app</p>
-                    <p>Brings all your news into one place</p>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
                   </td>
-                  <td class="table-act-btn">
-                    <button class="nostyle-btn">
-                      <img src="../Image/delete-icon.svg" alt="delete-icon">
-                    </button>
-                    <button class="nostyle-btn">
-                      <img src="../Image/edit-icon.svg" alt="edit-icon">
-                    </button>
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
 
+                  </td>
+                </tr> <tr>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-col">
+                    <div class="progressive-box">
+                      <div class="progressive-bar "></div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="status">Customer</p>
+
+                  </td>
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
+
+                      </div>
+                  </td>
+                  <td>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
+                  </td>
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
+
+                  </td>
+                </tr> <tr>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-col">
+                    <div class="progressive-box">
+                      <div class="progressive-bar "></div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="status">Customer</p>
+
+                  </td>
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
+
+                      </div>
+                  </td>
+                  <td>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
+                  </td>
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
+
+                  </td>
+                </tr> <tr>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-col">
+                    <div class="progressive-box">
+                      <div class="progressive-bar "></div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="status">Customer</p>
+
+                  </td>
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
+
+                      </div>
+                  </td>
+                  <td>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
+                  </td>
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
 
                   </td>
                 </tr>
                 <tr>
-                  <td class="table-titlebox">
-                    <input class="table-chechkbox thead-checkbox" type="checkbox">
-                    <img src="../Image/compeny-logo1.svg" alt="company-logo">
-                    <div>
-                      <h2 class="table-title">Catalog</h2>
-                      <h3 class="company-info">catalogapp.io</h3>
+                  <td>
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -428,50 +613,54 @@
                     <p class="status">Customer</p>
 
                   </td>
-                  <td class="avatar-container">
+                  <td>
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
 
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <span class="avatar-number">+8</span>
-
-
+                      </div>
                   </td>
                   <td>
-                    <p>Content curating app</p>
-                    <p>Brings all your news into one place</p>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
                   </td>
-                  <td class="table-act-btn">
-                    <button class="nostyle-btn">
-                      <img src="../Image/delete-icon.svg" alt="delete-icon">
-                    </button>
-                    <button class="nostyle-btn">
-                      <img src="../Image/edit-icon.svg" alt="edit-icon">
-                    </button>
-
+                  <td>
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
 
                   </td>
                 </tr>
                 <tr>
-                  <td class="table-titlebox">
-                    <input class="table-chechkbox thead-checkbox" type="checkbox">
-                    <img src="../Image/compeny-logo1.svg" alt="company-logo">
-                    <div>
-                      <h2 class="table-title">Catalog</h2>
-                      <h3 class="company-info">catalogapp.io</h3>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
                     </div>
                   </td>
-                  <td>
+                  <td class="table-col">
                     <div class="progressive-box">
                       <div class="progressive-bar "></div>
                     </div>
@@ -480,50 +669,53 @@
                     <p class="status">Customer</p>
 
                   </td>
-                  <td class="avatar-container">
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
 
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <span class="avatar-number">+8</span>
-
-
+                      </div>
                   </td>
                   <td>
-                    <p>Content curating app</p>
-                    <p>Brings all your news into one place</p>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
                   </td>
-                  <td class="table-act-btn">
-                    <button class="nostyle-btn">
-                      <img src="../Image/delete-icon.svg" alt="delete-icon">
-                    </button>
-                    <button class="nostyle-btn">
-                      <img src="../Image/edit-icon.svg" alt="edit-icon">
-                    </button>
-
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
 
                   </td>
-                </tr>
-                <tr>
-                  <td class="table-titlebox">
-                    <input class="table-chechkbox thead-checkbox" type="checkbox">
-                    <img src="../Image/compeny-logo1.svg" alt="company-logo">
-                    <div>
-                      <h2 class="table-title">Catalog</h2>
-                      <h3 class="company-info">catalogapp.io</h3>
+                </tr> <tr>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
                     </div>
                   </td>
-                  <td>
+                  <td class="table-col">
                     <div class="progressive-box">
                       <div class="progressive-bar "></div>
                     </div>
@@ -532,50 +724,53 @@
                     <p class="status">Customer</p>
 
                   </td>
-                  <td class="avatar-container">
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
 
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <span class="avatar-number">+8</span>
-
-
+                      </div>
                   </td>
                   <td>
-                    <p>Content curating app</p>
-                    <p>Brings all your news into one place</p>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
                   </td>
-                  <td class="table-act-btn">
-                    <button class="nostyle-btn">
-                      <img src="../Image/delete-icon.svg" alt="delete-icon">
-                    </button>
-                    <button class="nostyle-btn">
-                      <img src="../Image/edit-icon.svg" alt="edit-icon">
-                    </button>
-
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
 
                   </td>
-                </tr>
-                <tr>
-                  <td class="table-titlebox">
-                    <input class="table-chechkbox thead-checkbox" type="checkbox">
-                    <img src="../Image/compeny-logo1.svg" alt="company-logo">
-                    <div>
-                      <h2 class="table-title">Catalog</h2>
-                      <h3 class="company-info">catalogapp.io</h3>
+                </tr> <tr>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
                     </div>
                   </td>
-                  <td>
+                  <td class="table-col">
                     <div class="progressive-box">
                       <div class="progressive-bar "></div>
                     </div>
@@ -584,50 +779,53 @@
                     <p class="status">Customer</p>
 
                   </td>
-                  <td class="avatar-container">
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
 
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <span class="avatar-number">+8</span>
-
-
+                      </div>
                   </td>
                   <td>
-                    <p>Content curating app</p>
-                    <p>Brings all your news into one place</p>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
                   </td>
-                  <td class="table-act-btn">
-                    <button class="nostyle-btn">
-                      <img src="../Image/delete-icon.svg" alt="delete-icon">
-                    </button>
-                    <button class="nostyle-btn">
-                      <img src="../Image/edit-icon.svg" alt="edit-icon">
-                    </button>
-
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
+                    </div>
 
                   </td>
-                </tr>
-                <tr>
-                  <td class="table-titlebox">
-                    <input class="table-chechkbox thead-checkbox" type="checkbox">
-                    <img src="../Image/compeny-logo1.svg" alt="company-logo">
-                    <div>
-                      <h2 class="table-title">Catalog</h2>
-                      <h3 class="company-info">catalogapp.io</h3>
+                </tr> <tr>
+                  <td class="table-col">
+                    <div class="table-titlebox">
+                      <input class="table-chechkbox thead-checkbox" type="checkbox">
+                      <img src="../Image/compeny-logo1.svg" alt="company-logo">
+                      <div>
+                        <h2 class="table-title">Catalog</h2>
+                        <h3 class="company-about">catalogapp.io</h3>
+                      </div>
                     </div>
                   </td>
-                  <td>
+                  <td class="table-col">
                     <div class="progressive-box">
                       <div class="progressive-bar "></div>
                     </div>
@@ -636,88 +834,40 @@
                     <p class="status">Customer</p>
 
                   </td>
-                  <td class="avatar-container">
+                  <td class="table-col">
+                    <div class="avatars">
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="user-avatar">
+                      </div>
+                      <div class="avatar">
+                        <span class="avatar-number">+8</span>
 
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <span class="avatar-number">+8</span>
-
-
+                      </div>
                   </td>
                   <td>
-                    <p>Content curating app</p>
-                    <p>Brings all your news into one place</p>
+                    <p class="company-about company-info">Content curating app
+                    </p>
+                    <p class="company-about">Brings all your news into one place</p>
                   </td>
-                  <td class="table-act-btn">
-                    <button class="nostyle-btn">
-                      <img src="../Image/delete-icon.svg" alt="delete-icon">
-                    </button>
-                    <button class="nostyle-btn">
-                      <img src="../Image/edit-icon.svg" alt="edit-icon">
-                    </button>
-
-
-                  </td>
-                </tr>
-                <tr>
-                  <td class="table-titlebox">
-                    <input class="table-chechkbox thead-checkbox" type="checkbox">
-                    <img src="../Image/compeny-logo1.svg" alt="company-logo">
-                    <div>
-                      <h2 class="table-title">Catalog</h2>
-                      <h3 class="company-info">catalogapp.io</h3>
+                  <td class=" table-col">
+                    <div class="table-act-btn">
+                      <button class="nostyle-btn">
+                        <img src="../Image/delete-icon.svg" alt="delete-icon">
+                      </button>
+                      <button class="nostyle-btn">
+                        <img src="../Image/edit-icon.svg" alt="edit-icon">
+                      </button>
                     </div>
-                  </td>
-                  <td>
-                    <div class="progressive-box">
-                      <div class="progressive-bar "></div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="status">Customer</p>
 
-                  </td>
-                  <td class="avatar-container">
-
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <img class="img-avatar" src="../SidebarIcon/profile-picture.jpg" alt="">
-                    </div>
-                    <div class="avatar">
-                      <span class="avatar-number">+8</span>
-
-
-                  </td>
-                  <td>
-                    <p>Content curating app</p>
-                    <p>Brings all your news into one place</p>
-                  </td>
-                  <td class="table-act-btn">
-                    <button class="nostyle-btn">
-                      <img src="../Image/delete-icon.svg" alt="delete-icon">
-                    </button>
-                    <button class="nostyle-btn">
-                      <img src="../Image/edit-icon.svg" alt="edit-icon">
-                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -732,6 +882,8 @@
           </div>
         </div>
       </section>
+    </main>
+
   </div>
 
 </body>
