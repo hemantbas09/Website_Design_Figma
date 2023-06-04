@@ -200,6 +200,9 @@ li {
     padding-left: 42px;
     width: 100%;
 }
+.text-area {
+    resize: none;
+  }
 
 .progressive-box {
     height: 8px;
