@@ -1,9 +1,6 @@
-const localStorageData = localStorage.getItem("personaldetailsArray")
-const personalDetails = JSON.parse(localStorageData);
 const tableBody = document.querySelector("#tablebody");
 const sidebarElement = document.getElementById('sidebar')
 const hamburgerMenu = document.getElementById('Hamburger-menu')
-
 const form = document.getElementById("form");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
@@ -14,13 +11,106 @@ const country = document.querySelector("select[name='country']");
 const timezone = document.querySelector("select[name='timezone']");
 const textType = document.querySelector("select[name='text-type']");
 const bio = document.getElementById("textarea");
-const textCount = document.getElementById("text-count")
 const textarea = document.getElementById("textarea-container")
 const profileimageElement = document.getElementById("profile-imageElement")
-const textBold = document.getElementById("font-bold")
-const textItalic = document.getElementById("font-italic")
 
-// Retrive the data to the table:
+// Extract the data from the local storage and change into json Object:
+const localStorageData = localStorage.getItem("personaldetailsArray")
+const personalDetails = JSON.parse(localStorageData);
+
+// find the url of the page and extract id:
+let ulrPath = window.location.href
+let id = ulrPath.split("?")[1]
+
+// Hamburger Menu:
+hamburgerMenu.addEventListener('click', (e) => {
+  if (sidebarElement.style.display === 'none') {
+    sidebarElement.style.display = 'block';
+  } else {
+    sidebarElement.style.display = 'none';
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1024) {
+    sidebarElement.style.display = 'block';
+  } else {
+    sidebarElement.style.display = 'none';
+  }
+});
+
+// Create:
+if (profilePicture) {
+
+  let imageURL;
+  profilePicture.addEventListener("change", (e) => {
+
+    // Access the Selected Files:
+    let selectedImage = e.target.files[0];
+
+    // Create a instance of the FileReader:
+    let reader = new FileReader();
+
+    // Read the selected file as a data URL---> readAsDataURL represent the file data as base64 encoded string:
+    reader.readAsDataURL(selectedImage);
+
+    // create the reader callback function:
+    reader.onload = function () {
+
+      // Update the source of the image:
+      imageURL = reader.result
+      profileimageElement.src = imageURL;
+    }
+  })
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // create a object:
+    const personaldetails = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      profilePicture: imageURL,
+      role: role.value,
+      country: country.value,
+      timezone: timezone.value,
+      bio: bio.value,
+      textType: textType.value
+    };
+
+    // Check if the data is existing in the local storage or not:
+    const existingData = localStorage.getItem("personaldetailsArray");
+
+    let dataArray;
+
+    // if existing data found in the local storage parse the existing data otherwise create new array:
+    if (existingData) {
+
+      // convert string into object
+      dataArray = JSON.parse(existingData);
+    } else {
+      dataArray = [];
+    }
+
+    // add data in the array:
+    dataArray.push(personaldetails);
+
+    // Convert array to the string:
+    const dataArrayString = JSON.stringify(dataArray);
+
+    // store in the local storage
+    localStorage.setItem("personaldetailsArray", dataArrayString);
+
+    form.reset();
+
+    window.location.href = 'dashboard.html'
+
+
+  });
+}
+
+// Read:
 if (tableBody) {
   for (let i = 0; i < personalDetails.length; i++) {
     const data = personalDetails[i];
@@ -98,42 +188,14 @@ if (tableBody) {
   }
 }
 
-// Delete the data:
-const deleteData = (id) => {
-
-  if (confirm("Are you sure") === true) {
-    let data = personalDetails.splice(id, 1)
-    let personalDetail = JSON.stringify(personalDetails);
-    localStorage.setItem("personaldetailsArray", personalDetail)
+//Delete:
+function deleteData(id) {
+  if (confirm("Are you sure?")) {
+    let personalDetails = JSON.parse(localStorage.getItem("personaldetailsArray"));
+    personalDetails.splice(id, 1);
+    localStorage.setItem("personaldetailsArray", JSON.stringify(personalDetails));
     window.location.reload();
+  } else {
+    alert("Wait a minute, who are you?");
   }
-  else {
-    alert("Wait a Minute Who are You")
-  }
-
 }
-
-//----------------- For hamburger menu active---------------------:
-
-hamburgerMenu.addEventListener('click', (e) => {
-  if (sidebarElement.style.display === 'none') {
-    sidebarElement.style.display = 'block';
-  } else {
-    sidebarElement.style.display = 'none';
-  }
-});
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 1024) {
-    sidebarElement.style.display = 'block';
-  } else {
-    sidebarElement.style.display = 'none';
-  }
-});
-
-//-------------Create--------------------
-
-
-
-
-

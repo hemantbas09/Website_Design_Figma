@@ -45,7 +45,7 @@ const formHTML = `<div>
 
     <div class="input-container-content">
         <div class="formimage-container">
-            <img id="profile-imageElement" src="../SidebarIcon/profile-picture.jpg" alt="">
+            <img id="profile-imageElement" src="${personalDetail.profilePicture}" alt="">
         </div>
         <div class="file-container ">
 
@@ -180,12 +180,8 @@ const formHTML = `<div>
     <button id="submit-btn" type="submit" class="btn btn-primary">Save</button>
 </div>
 </div>`
+
 form.innerHTML += formHTML
-
-
-
-
-
 
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
@@ -199,50 +195,50 @@ const bio = document.getElementById("textarea");
 const profileimageElement = document.getElementById("profile-imageElement");
 
 
-
 let imageURL;
 
 profilePicture.addEventListener("change", (e) => {
-
-    // Access the Selected Files:
+    // Access the selected files:
     let selectedImage = e.target.files[0];
 
-    // Create a instance of the FileReader:
-    let reader = new FileReader();
+    if (selectedImage) {
+        // Create an instance of the FileReader:
+        let reader = new FileReader();
 
-    // Read the selected file as a data URL
-    reader.readAsDataURL(selectedImage);
+        // Read the selected file as a data URL:
+        reader.readAsDataURL(selectedImage);
 
-    // create the reader callback function:
-    reader.onload = function () {
-
-        // Update the source of the image:
-        imageURL = reader.result
-        profileimageElement.src = imageURL;
-
+        // Create the reader callback function:
+        reader.onload = function () {
+            // Update the source of the image:
+            imageURL = reader.result;
+            profileimageElement.src = imageURL;
+        };
     }
-})
-
+});
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // Change the existing value to update the data:
+    personalDetail.firstName = firstName.value;
+    personalDetail.lastName = lastName.value;
+    personalDetail.email = email.value;
+    personalDetail.profilePicture = imageURL || personalDetail.profilePicture;
+    personalDetail.role = role.value;
+    personalDetail.country = country.value;
+    personalDetail.timezone = timezone.value;
+    personalDetail.textType = textType.value;
+    personalDetail.bio = bio.value;
 
-    // change the existing value for the update the data:
-    personalDetail.firstName = firstName.value
-    personalDetail.lastName = lastName.value
-    personalDetail.email = email.value
-    personalDetail.profilePicture = imageURL
-    personalDetail.role = role.value
-    personalDetail.country = country.value
-    personalDetail.timezone = timezone.value
-    personalDetail.textType = textType.value
-    personalDetail.bio = bio.value
-
-    // Convert array to the string:
+    // Convert array to a string:
     const dataArrayString = JSON.stringify(personalDetails);
 
-    // store in the local storage
+    // Store in the local storage:
     localStorage.setItem("personaldetailsArray", dataArrayString);
 
+    window.location.href = "dashboard.html";
 });
+
+
+

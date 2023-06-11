@@ -2,6 +2,8 @@
 
 // access all the html element:
 const form = document.getElementById("form");
+const editForm = document.getElementById("edit-form");
+
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
 const email = document.getElementById("email");

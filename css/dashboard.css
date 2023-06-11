@@ -9,7 +9,8 @@
     background-color: white;
     padding: 0px 24px 0px 24px;
     z-index: 1;
-    transition: width 2s;
+    max-width: 320px;
+    transition: opacity 1s ease;
 }
 
 .sidebar-section {
