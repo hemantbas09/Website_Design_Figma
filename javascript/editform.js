@@ -1,16 +1,19 @@
 const form = document.querySelector("#form");
+// access all the data from the backend:
+
+
 const localStorageData = localStorage.getItem("personaldetailsArray")
 const personalDetails = JSON.parse(localStorageData);
 
 // get the url path of the update page:
 let ulrPath = window.location.href
+
 // extract the the id from the url:
 let id = ulrPath.split("?")[1]
 
 // extract the data from the local storage bu using id:
 let personalDetail = personalDetails[id]
-console.log("check",personalDetails)
-// console.log(personalDetails)
+
 const formHTML = `<div>
 <div class="input-container setting-input-container bigscreen-name-section">
     <label class="label setting-label" for="name">Name</label>
@@ -42,13 +45,13 @@ const formHTML = `<div>
 
     <div class="input-container-content">
         <div class="formimage-container">
-            <img src="../SidebarIcon/profile-picture.jpg" alt="">
+            <img id="profile-imageElement" src="../SidebarIcon/profile-picture.jpg" alt="">
         </div>
         <div class="file-container ">
 
 
             <label class="file-content " for="profile-picture">
-                <img class="file-icon" src="../Form/upload.svg" alt="file-icon">
+                <img  class="file-icon" src="../Form/upload.svg" alt="file-icon">
                 <div class="text-standard">
                     <p> <span class="anchor-tag primary-anchor-tag"> Click to upload </span>
                         or
@@ -144,7 +147,7 @@ const formHTML = `<div>
 
         </div>
         <textarea class="input setting-input text-area setting-textarea" name="textarea"
-            id="textarea" cols="10" rows="5" value="${personalDetail.bio}"></textarea>
+            id="textarea" cols="10" rows="5">${personalDetail.bio}</textarea>
         <p class="text text-area-font">275 characters left</p>
     </div>
 </div>
@@ -178,41 +181,68 @@ const formHTML = `<div>
 </div>
 </div>`
 form.innerHTML += formHTML
-let updateData = () => {
-    console.log(personalDetail)
 
-}
+
+
+
+
+
+const firstName = document.getElementById("first-name");
+const lastName = document.getElementById("last-name");
+const email = document.getElementById("email");
+const profilePicture = document.getElementById("profile-picture");
+const role = document.getElementById("role");
+const country = document.querySelector("select[name='country']");
+const timezone = document.querySelector("select[name='timezone']");
+const textType = document.querySelector("select[name='text-type']");
+const bio = document.getElementById("textarea");
+const profileimageElement = document.getElementById("profile-imageElement");
+
+
+
+let imageURL;
+
+profilePicture.addEventListener("change", (e) => {
+
+    // Access the Selected Files:
+    let selectedImage = e.target.files[0];
+
+    // Create a instance of the FileReader:
+    let reader = new FileReader();
+
+    // Read the selected file as a data URL
+    reader.readAsDataURL(selectedImage);
+
+    // create the reader callback function:
+    reader.onload = function () {
+
+        // Update the source of the image:
+        imageURL = reader.result
+        profileimageElement.src = imageURL;
+
+    }
+})
 
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // access all the data from the backend:
-    const firstName = document.getElementById("first-name").value;
-    const lastName = document.getElementById("last-name").value;
-    const email = document.getElementById("email").value;
-    const profilePicture = document.getElementById("profile-picture").value;
-    const role = document.getElementById("role").value;
-    const country = document.querySelector("select[name='country']").value;
-    const timezone = document.querySelector("select[name='timezone']").value;
-    const textType = document.querySelector("select[name='text-type']").value;
-    const bio = document.getElementById("textarea").value;
 
     // change the existing value for the update the data:
-    personalDetail.firstName = firstName
-    personalDetail.lastName = lastName
-    personalDetail.email = email
-    personalDetail.profilePicture = profilePicture
-    personalDetail.role = role
-    personalDetail.country = country
-    personalDetail.timezone = timezone
-    personalDetail.textType = textType
-    personalDetail.bio = bio
+    personalDetail.firstName = firstName.value
+    personalDetail.lastName = lastName.value
+    personalDetail.email = email.value
+    personalDetail.profilePicture = imageURL
+    personalDetail.role = role.value
+    personalDetail.country = country.value
+    personalDetail.timezone = timezone.value
+    personalDetail.textType = textType.value
+    personalDetail.bio = bio.value
 
     // Convert array to the string:
     const dataArrayString = JSON.stringify(personalDetails);
 
     // store in the local storage
     localStorage.setItem("personaldetailsArray", dataArrayString);
-    console.log(personalDetails)
+
 });

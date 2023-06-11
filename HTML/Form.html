@@ -19,8 +19,7 @@
     <!-- Header of the website -->
     <header class="header-content headerwith-sidebar">
         <section class="header-section">
-
-            <button class="nostyle-btn" aria-label="Menu">
+            <button class="nostyle-btn" aria-label="Menu"  id="Hamburger-menu">
                 <img class="hamburger-icon" src="../Image/hamburgerIcon.svg" alt="Hamburger Icon" />
             </button>
 
@@ -42,7 +41,7 @@
 
         <!-- Sidebar -->
         <section class="sidebar-section">
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebar">
 
                 <a class="logo-container sidebar-logo" href="signup.html">
                     <div class="logo-wrap">
@@ -71,7 +70,7 @@
                         </li>
 
                         <li>
-                            <a class="sidemenu-item" href="#">
+                            <a class="sidemenu-item" href="../HTML/dashboard.html">
                                 <div class="sidemenu-content">
                                     <img src="../SidebarIcon/dashboard-icon.svg" alt="">
                                     <p>Dashboard</p>
@@ -360,9 +359,9 @@
                             <label class="label setting-label" for="name">Name</label>
                             <div class="input-container-content setting-fullName">
                                 <input class="input secondary-input input-width-fixed" type="text" id="first-name"
-                                    name="first-name" placeholder="First Name">
+                                    name="first-name" placeholder="First Name" required>
                                 <input class="input secondary-input input-width-fixed" type="text" id="last-name"
-                                    name="last-name" placeholder="Last Name">
+                                    name="last-name" placeholder="Last Name" required>
                             </div>
                         </div>
 
@@ -372,7 +371,7 @@
                             <div class="input-container-content ">
                                 <img class="search-icon" src="../Form/email.svg" alt="email-icon">
                                 <input class="input search secondary-input " type="email" id="email" name="email"
-                                    placeholder="olivia@untitledui.com">
+                                    placeholder="olivia@untitledui.com" required>
                             </div>
                         </div>
 
@@ -386,7 +385,7 @@
 
                             <div class="input-container-content">
                                 <div class="formimage-container">
-                                    <img src="../SidebarIcon/profile-picture.jpg" alt="">
+                                    <img id="profile-imageElement" src="../SidebarIcon/profile-picture.jpg" alt="">
                                 </div>
                                 <div class="file-container ">
 
@@ -402,7 +401,7 @@
                                     </label>
 
                                     <input class="input search secondary-input file" type="file" id="profile-picture"
-                                        name="file">
+                                        name="file" required>
 
                                 </div>
                             </div>
@@ -421,7 +420,7 @@
                                 <div class="select-dropdown">
                                     <img src="../Form/select-dropdown.svg" alt="">
                                 </div>
-                                <select class="input setting-input" name="country" id="country">
+                                <select class="input setting-input" name="country" id="country" required>
                                     <option value="Nepal" selected>Nepal</option>
                                     <option value="India">India</option>
                                     <option value="Pakistan">Pakistan</option>
@@ -440,7 +439,7 @@
                                 <div class="select-dropdown">
                                     <img src="../Form/select-dropdown.svg" alt="">
                                 </div>
-                                <select class="input setting-input " name="timezone" id="timezone">
+                                <select class="input setting-input " name="timezone" id="timezone" required>
                                     <option value="UTC-08:00">UTC-08:00</option>
                                     <option value="America/Los_Angeles">Pacific Time (US & Canada)</option>
                                     <option value="America/Tijuana">Tijuana, Baja California</option>
@@ -468,26 +467,43 @@
                                             <div class="select-dropdown">
                                                 <img src="../Form/select-dropdown.svg" alt="">
                                             </div>
-                                            <select class="input setting-input text-type" name="text-type" id="text-type">
+                                            <select class="input setting-input text-type" name="text-type"
+                                                id="text-type">
                                                 <option value="normaltext" selected>Normal Text</option>
                                                 <option value="bold">Bold</option>
-
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="text-area-icon">
-                                        <img src="../Form/bold.svg" alt="">
-                                        <img src="../Form/italic.svg" alt="">
-                                        <img src="../Form/save.svg" alt="">
-                                        <img src="../Form/unorder-list.svg" alt="">
-                                        <img src="../Form/oder-list.svg" alt="">
+                                        <a id="font-bold" class="">
+                                            <img src="../Form/bold.svg" alt="fontbold-icon">
+                                        </a>
+
+                                        <a id="font-italic">
+                                            <img src="../Form/italic.svg" alt="">
+                                        </a>
+
+                                        <a>
+                                            <img src="../Form/save.svg" alt="">
+                                        </a>
+
+                                        <a id="text-unorderlist">
+                                            <img src="../Form/unorder-list.svg" alt="">
+                                        </a>
+
+                                        <a id="text-orderlist">
+                                            <img src="../Form/oder-list.svg" alt="">
+                                        </a>
                                     </div>
 
                                 </div>
-                                <textarea class="input setting-input text-area setting-textarea" name="textarea" id="textarea"
-                                    cols="10" rows="5"></textarea>
-                                <p class="text text-area-font">275 characters left</p>
+                                <div id="textarea-container">
+                                    <textarea class="input setting-input text-area setting-textarea" name="textarea"
+                                        id="textarea" cols="10" rows="5" maxlength="274" required></textarea>
+                                    <p class="text text-area-font"> <span id="text-count">275</span> characters left</p>
+                                </div>
+
                             </div>
                         </div>
 
@@ -508,7 +524,8 @@
                                     </div>
                                 </label>
 
-                                <input class="input search secondary-input file" type="file" id="project-file" name="project-file">
+                                <input class="input search secondary-input file" type="file" id="project-file"
+                                    name="project-file" required>
 
                             </div>
                         </div>
@@ -526,7 +543,9 @@
         </main>
 
     </div>
-    <script src="../javascript/form.js"></script>
+    <script src="../javascript/dashboard.js"></script>
+    <!-- <script src="../javascript/form.js"></script> -->
+    
 </body>
 
 </html>
