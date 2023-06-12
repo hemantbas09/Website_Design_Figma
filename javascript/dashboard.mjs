@@ -1,6 +1,9 @@
+const header = document.getElementById('header');
 const tableBody = document.querySelector("#tablebody");
 const sidebarElement = document.getElementById('sidebar')
-const hamburgerMenu = document.getElementById('Hamburger-menu')
+const openNav = document.getElementById('open-nav')
+const closeNav = document.getElementById('close-nav')
+
 const form = document.getElementById("form");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
@@ -13,31 +16,46 @@ const textType = document.querySelector("select[name='text-type']");
 const bio = document.getElementById("textarea");
 const textarea = document.getElementById("textarea-container")
 const profileimageElement = document.getElementById("profile-imageElement")
-
+export const previousBtn = document.getElementById("previous-btn");
+export const nextBtn = document.getElementById("next-btn");
+const searchInput = document.getElementById("search");
+const dashboard = document.getElementById("dashboard");
 // Extract the data from the local storage and change into json Object:
 const localStorageData = localStorage.getItem("personaldetailsArray")
-const personalDetails = JSON.parse(localStorageData);
+export const personalDetails = JSON.parse(localStorageData);
+import { Filter, paginationPreviousBtn, paginationNextBtn, updatePagination, pagination } from "./function.mjs";
 
 // find the url of the page and extract id:
 let ulrPath = window.location.href
 let id = ulrPath.split("?")[1]
 
 // Hamburger Menu:
-hamburgerMenu.addEventListener('click', (e) => {
-  if (sidebarElement.style.display === 'none') {
+openNav.addEventListener('click', function () {
+  sidebarElement.style.display = 'block';
+  header.style.display = 'none';
+  dashboard.style.setProperty('--navColor', 'rgba(181, 178, 178, 0.2)');
+  dashboard.style.position = 'fixed';
+});
+
+closeNav.addEventListener('click', function () {
+  sidebarElement.style.display = 'none';
+  header.style.display = 'block';
+  dashboard.style.setProperty('--navColor', 'transparent');
+  dashboard.style.position = 'relative';
+});
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 1024) {
     sidebarElement.style.display = 'block';
+    dashboard.style.setProperty('--navColor', 'transparent');
+    dashboard.style.position = 'relative';
+    header.style.display = 'none';
   } else {
     sidebarElement.style.display = 'none';
+    header.style.display = 'block';
   }
 });
 
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 1024) {
-    sidebarElement.style.display = 'block';
-  } else {
-    sidebarElement.style.display = 'none';
-  }
-});
 
 // Create:
 if (profilePicture) {
@@ -110,11 +128,30 @@ if (profilePicture) {
   });
 }
 
-// Read:
-if (tableBody) {
-  for (let i = 0; i < personalDetails.length; i++) {
-    const data = personalDetails[i];
-    let row = `<tr>
+previousBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  paginationPreviousBtn(personalDetails)
+})
+
+nextBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  paginationNextBtn(personalDetails)
+})
+
+
+export function renderTable() {
+
+  const tableData = pagination(personalDetails);
+  let searchQuery = searchInput.value;
+  let filterData = Filter(searchQuery, personalDetails)
+  let dataToDisplay = searchQuery ? filterData : tableData;
+  // Read:
+  if (dataToDisplay.length > 0) {
+    tableBody.innerHTML = '';
+
+    for (let i = 0; i < dataToDisplay.length; i++) {
+      const data = dataToDisplay[i];
+      let row = `<tr>
                   <td class="table-col">
                       <div class="table-titlebox">
                         <input class="table-chechkbox thead-checkbox" type="checkbox">
@@ -184,12 +221,30 @@ if (tableBody) {
   
                     </td>
                   </tr>`
-    tableBody.innerHTML += row
+      if (dataToDisplay.length > 0) {
+        tableBody.innerHTML += row
+      }
+
+    }
+  } else {
+    let noFound = `
+<tr>
+  <td colspan="8">Data Not Found</td>
+</tr>
+`;
+    tableBody.innerHTML = noFound;
   }
 }
 
+
+// default render of the tabel:
+searchInput.addEventListener('input', renderTable)
+updatePagination(personalDetails);
+
 //Delete:
-function deleteData(id) {
+
+
+let deleteData = (id) => {
   if (confirm("Are you sure?")) {
     let personalDetails = JSON.parse(localStorage.getItem("personaldetailsArray"));
     personalDetails.splice(id, 1);

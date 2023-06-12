@@ -16,10 +16,10 @@
 <body>
 
   <!-- Header of the website -->
-  <header class="header-content headerwith-sidebar">
+  <header class="header-content headerwith-sidebar" id="header">
     <section class="header-section">
 
-      <button class="nostyle-btn" aria-label="Menu"  id="Hamburger-menu">
+      <button class="nostyle-btn" aria-label="Menu" id="open-nav">
         <img class="hamburger-icon" src="../Image/hamburgerIcon.svg" alt="Hamburger Icon" />
       </button>
 
@@ -37,20 +37,26 @@
     </section>
   </header>
 
-  <div class="dashboard">
+  <div class="dashboard" >
 
     <!-- Sidebar -->
-    <section class="sidebar-section" >
+    <section class="sidebar-section">
       <aside class="sidebar" id="sidebar">
 
-        <a class="logo-container sidebar-logo" href="signup.html">
-          <div class="logo-wrap">
-            <img class="logo" src="../Image/Logo.svg" alt="Logo" />
-          </div>
-          <div class="logo-text-wrap">
-            <img class="logo-text" src="../Image/logo-text.svg" alt="Untitled UI" />
-          </div>
-        </a>
+
+        <div class="sidebar-heading">
+          <button class="nostyle-btn" aria-label="Menu" id="close-nav">
+            <img class="hamburger-icon" src="../Image/hamburgerIcon.svg" alt="Hamburger Icon" />
+          </button>
+          <a class="logo-container sidebar-logo" href="signup.html">
+            <div class="logo-wrap">
+              <img class="logo" src="../Image/Logo.svg" alt="Logo" />
+            </div>
+            <div class="logo-text-wrap">
+              <img class="logo-text" src="../Image/logo-text.svg" alt="Untitled UI" />
+            </div>
+          </a>
+        </div>
         <div class="sidebar-top">
           <form action="" class="search-container sidebar-search">
             <img class="search-icon" src="../Image/search.svg" alt="search-icon">
@@ -180,7 +186,7 @@
     </section>
 
     <!-- Content -->
-    <main class="dashboard-main">
+    <main class="dashboard-main" id="dashboard">
       <div class="dashboard-heading-container">
         <div class="dashboard-heading">
           <h1 class="dashboard-heading-title">Welcome back, Olivia</h1>
@@ -277,7 +283,7 @@
 
         <form action="" class="search-container">
           <img class="search-icon" src="../Image/search.svg" alt="">
-          <input class="input search" type="text" placeholder="Search">
+          <input class="input search" type="text" placeholder="Search" id="search">
         </form>
         <div class="filter-container">
           <button class="btn btn-icon btn-outline  full-btn">
@@ -322,8 +328,8 @@
             </table>
             <div class="pagination">
               <div class="pagination-btn">
-                <button class="btn btn-outline">Previous</button>
-                <button class="btn btn-outline">Next</button>
+                <button class="btn btn-outline" id="previous-btn">Previous</button>
+                <button class="btn btn-outline" id="next-btn">Next</button>
               </div>
               <p class="pagination-page">Page 1 of 10</p>
 
@@ -335,8 +341,10 @@
 
   </div>
 
-  <script src="../javascript/dashboard.js"></script>
+  <script type="module" src="../javascript/dashboard.mjs"></script>
+  <!-- <script type="module" src="../javascript/function.mjs"></script> -->
 
-</body>
+
+</body>m
 
 </html>
