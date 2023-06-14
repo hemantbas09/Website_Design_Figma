@@ -47,9 +47,6 @@ a {
     color: #667085;
 }
 
-.bigscreen-name-section {
-    display: none;
-}
 
 .secondary-input::placeholder {
     color: #101828;
@@ -91,6 +88,16 @@ a {
 .icon-input-container>img {
     width: 16px;
     height: 14px;
+}
+
+.mobile-name {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#lg-screen-name {
+    display: none;
 }
 
 .file {
@@ -184,14 +191,17 @@ a {
 }
 
 .input-container-content {
-    width: 100%;
-    max-width: 512px;
     position: relative;
-
 }
-.project-upload-container{
+
+.project-upload-container {
     margin-bottom: 20px;
 }
+
+#first-name {
+    margin-bottom: 20px;
+}
+
 @media only screen and (min-width: 1024px) {
 
     .setting-navmenu {
@@ -219,14 +229,10 @@ a {
         display: none;
     }
 
-    .smallscreen-name-section {
-        display: none;
+    #lg-screen-name {
+        display: inline;
     }
 
-    .bigscreen-name-section {
-        display: flex;
-
-    }
 
     .input-width-fixed {
         width: 50%;
@@ -280,5 +286,26 @@ a {
 
     .text-type {
         min-width: 240px;
+    }
+
+    #mobile-label {
+        display: none;
+    }
+
+    .mobile-name {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    #first-name {
+        margin-bottom: 0px;
+    }
+
+    .input-container-content {
+        width: 100%;
+        max-width: 512px;
+        position: relative;
+
     }
 }

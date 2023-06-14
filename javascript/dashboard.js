@@ -23,6 +23,9 @@ const dashboard = document.getElementById("dashboard");
 const totalUser = document.getElementById("total-user");
 const currentPageElement = document.getElementById('current-page');
 const totalPageElement = document.getElementById('total-page');
+const mobileFirstName = document.getElementById('mobile-first-name');
+const mobileLastName = document.getElementById('mobile-last-name')
+
 
 // Get data from local storage and parse it
 const localStorageData = localStorage.getItem("personaldetailsArray");
@@ -76,35 +79,39 @@ if (profilePicture) {
     };
   });
 
+
+
   // Form submit event listener
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    
 
-    const personaldetails = {
-      firstName: firstName.value,
-      lastName: lastName.value,
-      email: email.value,
-      profilePicture: imageURL,
-      role: role.value,
-      country: country.value,
-      timezone: timezone.value,
-      bio: bio.value,
-      textType: textType.value
-    };
+     const personaldetails = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: email.value,
+        profilePicture: imageURL,
+        role: role.value,
+        country: country.value,
+        timezone: timezone.value,
+        bio: bio.value,
+        textType: textType.value
+      };
 
-    let dataArray = [];
 
-    const existingData = localStorage.getItem("personaldetailsArray");
-    if (existingData) {
-      dataArray = JSON.parse(existingData);
-    }
+  let dataArray = [];
 
-    dataArray.push(personaldetails);
-    localStorage.setItem("personaldetailsArray", JSON.stringify(dataArray));
+  const existingData = localStorage.getItem("personaldetailsArray");
+  if (existingData) {
+    dataArray = JSON.parse(existingData);
+  }
 
-    form.reset();
-    window.location.href = 'dashboard.html';
-  });
+  dataArray.push(personaldetails);
+  localStorage.setItem("personaldetailsArray", JSON.stringify(dataArray));
+
+  form.reset();
+  window.location.href = 'dashboard.html';
+});
 }
 
 let currentPage = 1;
