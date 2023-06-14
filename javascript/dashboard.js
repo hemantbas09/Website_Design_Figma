@@ -1,9 +1,9 @@
+// Get element references
 const header = document.getElementById('header');
 const tableBody = document.querySelector("#tablebody");
-const sidebarElement = document.getElementById('sidebar')
-const openNav = document.getElementById('open-nav')
-const closeNav = document.getElementById('close-nav')
-
+const sidebarElement = document.getElementById('sidebar');
+const openNav = document.getElementById('open-nav');
+const closeNav = document.getElementById('close-nav');
 const form = document.getElementById("form");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
@@ -14,22 +14,25 @@ const country = document.querySelector("select[name='country']");
 const timezone = document.querySelector("select[name='timezone']");
 const textType = document.querySelector("select[name='text-type']");
 const bio = document.getElementById("textarea");
-const textarea = document.getElementById("textarea-container")
-const profileimageElement = document.getElementById("profile-imageElement")
-export const previousBtn = document.getElementById("previous-btn");
-export const nextBtn = document.getElementById("next-btn");
+const textarea = document.getElementById("textarea-container");
+const profileimageElement = document.getElementById("profile-imageElement");
+const previousBtn = document.getElementById("previous-btn");
+const nextBtn = document.getElementById("next-btn");
 const searchInput = document.getElementById("search");
 const dashboard = document.getElementById("dashboard");
-// Extract the data from the local storage and change into json Object:
-const localStorageData = localStorage.getItem("personaldetailsArray")
-export const personalDetails = JSON.parse(localStorageData);
-import { Filter, paginationPreviousBtn, paginationNextBtn, updatePagination, pagination } from "./function.mjs";
+const totalUser = document.getElementById("total-user");
+const currentPageElement = document.getElementById('current-page');
+const totalPageElement = document.getElementById('total-page');
 
-// find the url of the page and extract id:
-let ulrPath = window.location.href
-let id = ulrPath.split("?")[1]
+// Get data from local storage and parse it
+const localStorageData = localStorage.getItem("personaldetailsArray");
+const personalDetails = JSON.parse(localStorageData) || [];
 
-// Hamburger Menu:
+// Get the current URL and extract the ID
+let ulrPath = window.location.href;
+let id = ulrPath.split("?")[1];
+
+// Hamburger Menu event listeners
 openNav.addEventListener('click', function () {
   sidebarElement.style.display = 'block';
   header.style.display = 'none';
@@ -44,6 +47,7 @@ closeNav.addEventListener('click', function () {
   dashboard.style.position = 'relative';
 });
 
+// Resize event listener for responsive behavior
 window.addEventListener('resize', function () {
   if (window.innerWidth > 1024) {
     sidebarElement.style.display = 'block';
@@ -56,35 +60,26 @@ window.addEventListener('resize', function () {
   }
 });
 
-
-// Create:
+// Profile picture change event listener
 if (profilePicture) {
-
   let imageURL;
+
   profilePicture.addEventListener("change", (e) => {
-
-    // Access the Selected Files:
     let selectedImage = e.target.files[0];
-
-    // Create a instance of the FileReader:
     let reader = new FileReader();
 
-    // Read the selected file as a data URL---> readAsDataURL represent the file data as base64 encoded string:
     reader.readAsDataURL(selectedImage);
 
-    // create the reader callback function:
     reader.onload = function () {
-
-      // Update the source of the image:
-      imageURL = reader.result
+      imageURL = reader.result;
       profileimageElement.src = imageURL;
-    }
-  })
+    };
+  });
 
+  // Form submit event listener
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // create a object:
     const personaldetails = {
       firstName: firstName.value,
       lastName: lastName.value,
@@ -97,55 +92,83 @@ if (profilePicture) {
       textType: textType.value
     };
 
-    // Check if the data is existing in the local storage or not:
+    let dataArray = [];
+
     const existingData = localStorage.getItem("personaldetailsArray");
-
-    let dataArray;
-
-    // if existing data found in the local storage parse the existing data otherwise create new array:
     if (existingData) {
-
-      // convert string into object
       dataArray = JSON.parse(existingData);
-    } else {
-      dataArray = [];
     }
 
-    // add data in the array:
     dataArray.push(personaldetails);
-
-    // Convert array to the string:
-    const dataArrayString = JSON.stringify(dataArray);
-
-    // store in the local storage
-    localStorage.setItem("personaldetailsArray", dataArrayString);
+    localStorage.setItem("personaldetailsArray", JSON.stringify(dataArray));
 
     form.reset();
-
-    window.location.href = 'dashboard.html'
-
-
+    window.location.href = 'dashboard.html';
   });
 }
 
+let currentPage = 1;
+let numberPerPage = 2;
+let totalPages;
+
+// Previous button click event listener
 previousBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  paginationPreviousBtn(personalDetails)
-})
+  currentPage -= 1;
+  updatePagination();
+  currentPageElement.innerHTML = currentPage;
+  totalPageElement.innerHTML = totalPages;
+});
 
+// Next button click event listener
 nextBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  paginationNextBtn(personalDetails)
-})
+  currentPage += 1;
+  updatePagination();
+  currentPageElement.innerHTML = currentPage;
+  totalPageElement.innerHTML = totalPages;
+});
 
+// Update pagination based on current page
+const updatePagination = () => {
+  totalPages = Math.ceil(personalDetails.length / numberPerPage);
+  if (currentPage < 1) {
+    currentPage = 1;
+  } else if (currentPage > totalPages) {
+    currentPage = totalPages;
+  }
 
-export function renderTable() {
+  previousBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
 
-  const tableData = pagination(personalDetails);
-  let searchQuery = searchInput.value;
-  let filterData = Filter(searchQuery, personalDetails)
+  renderTable();
+};
+
+let filterData = [];
+let searchQuery;
+
+// Search input event listener
+searchInput.addEventListener("input", () => {
+  filterData = [];
+  searchQuery = searchInput.value.toLowerCase();
+  personalDetails.forEach((personalDetail, index) => {
+    let storeFirstName = `${personalDetail.firstName} ${personalDetail.lastName}`.toLowerCase();
+    if (searchQuery && storeFirstName.includes(searchQuery)) {
+      filterData.push(personalDetails[index]);
+    }
+  });
+});
+
+// Render table with data
+function renderTable() {
+  const startIndex = (currentPage - 1) * numberPerPage;
+  const endIndex = startIndex + numberPerPage;
+  let tableData = personalDetails.slice(startIndex, endIndex);
   let dataToDisplay = searchQuery ? filterData : tableData;
-  // Read:
+
+  currentPageElement.innerHTML = currentPage;
+  totalPageElement.innerHTML = totalPages;
+
   if (dataToDisplay.length > 0) {
     tableBody.innerHTML = '';
 
@@ -221,29 +244,23 @@ export function renderTable() {
   
                     </td>
                   </tr>`
-      if (dataToDisplay.length > 0) {
-        tableBody.innerHTML += row
-      }
 
+      tableBody.innerHTML += row;
     }
   } else {
-    let noFound = `
-<tr>
-  <td colspan="8">Data Not Found</td>
-</tr>
-`;
-    tableBody.innerHTML = noFound;
+    tableBody.innerHTML = '<tr><td colspan="6" class="empty-table">No data available</td></tr>';
   }
 }
 
-
-// default render of the tabel:
+// Initial rendering of table
+updatePagination();
 searchInput.addEventListener('input', renderTable)
-updatePagination(personalDetails);
-
-//Delete:
 
 
+// Total user in the Table:
+totalUser.innerHTML = personalDetails.length
+
+// Delete the Data:
 let deleteData = (id) => {
   if (confirm("Are you sure?")) {
     let personalDetails = JSON.parse(localStorage.getItem("personaldetailsArray"));

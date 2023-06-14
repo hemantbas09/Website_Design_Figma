@@ -37,7 +37,7 @@
     </section>
   </header>
 
-  <div class="dashboard" >
+  <div class="dashboard">
 
     <!-- Sidebar -->
     <section class="sidebar-section">
@@ -220,7 +220,7 @@
 
           <div class="card-body">
             <div class="number-badge">
-              <h3 class="card-text">2,420</h3>
+              <h3 class="card-text" id="total-user"></h3>
               <p class="card-message">
                 <img src="../Image/up-arrow.svg" alt="arrow-icon">
                 <span class="success"> 40% </span> vs last month
@@ -331,7 +331,7 @@
                 <button class="btn btn-outline" id="previous-btn">Previous</button>
                 <button class="btn btn-outline" id="next-btn">Next</button>
               </div>
-              <p class="pagination-page">Page 1 of 10</p>
+              <p class="pagination-page">Page <span id="current-page">1</span> of <span id="total-page" </span> </p>
 
             </div>
           </div>
@@ -341,7 +341,7 @@
 
   </div>
 
-  <script type="module" src="../javascript/dashboard.mjs"></script>
+  <script  src="../javascript/dashboard.js"></script>
   <!-- <script type="module" src="../javascript/function.mjs"></script> -->
 
 
