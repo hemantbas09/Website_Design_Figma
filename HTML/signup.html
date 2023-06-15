@@ -1,166 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/common-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Signup</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/common-style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <title>Signup</title>
-</head>
+  <body>
+    <!-- Starting of Header of the Website -->
+    <header class="header-content">
+      <section class="header-section">
+        <nav class="navbar">
+          <!-- logo -->
+          <a class="logo-container" href="index.html">
+            <div class="logo-wrap">
+              <img class="logo" src="../Image/Logo.svg" alt="Logo" />
+            </div>
+            <div class="logo-text-wrap">
+              <img
+                class="logo-text"
+                src="../Image/logo-text.svg"
+                alt="Untitled UI"
+              />
+            </div>
+          </a>
+          <!-- nav menu -->
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a class="anchor-tag" href="#">Home</a>
+            </li>
 
-<body>
-  <!-- Starting of Header of the Website -->
-  <header class="header-content">
-    <section class="header-section">
-      <nav class="navbar">
-        <!-- logo -->
-        <a class="logo-container" href="index.html">
-          <div class="logo-wrap">
-            <img class="logo" src="../Image/Logo.svg" alt="Logo" />
+            <li class="nav-item">
+              <a class="anchor-tag" href="#">
+                Product
+                <img
+                  class="dropdown-icon"
+                  src="../Image/dropdownicon.svg"
+                  alt="Dropdown Icon"
+                />
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="anchor-tag" href="#"
+                >Resources
+                <img
+                  class="dropdown-icon"
+                  src="../Image/dropdownicon.svg"
+                  alt="Dropdown Icon"
+                />
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="anchor-tag" href="#">Pricing</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- hambergur button -->
+        <button class="nostyle-btn" aria-label="Menu">
+          <img
+            class="hamburger-icon"
+            src="../Image/hamburgerIcon.svg"
+            alt="Hamburger Icon"
+          />
+        </button>
+
+        <!-- call to action button -->
+        <div class="cta-buttons">
+          <a class="anchor-tag" href="index.html">Login</a>
+          <a class="anchor-tag btn btn-primary" href="signup.html">Signup</a>
+        </div>
+      </section>
+    </header>
+    <!-- Ending of Header of the Website -->
+
+    <!-- Start of the main Content -->
+    <main class="main">
+      <section class="section">
+        <!-- Heading section  -->
+        <div class="heading-section signup-heading-section">
+          <img
+            class="content-logo"
+            src="../Image/Logo.svg"
+            alt="content logo"
+          />
+          <h2 class="heading">Create an account</h2>
+          <p class="subheading">Start your 30-day free trial</p>
+        </div>
+
+        <form class="form" id="signup-form">
+          
+          <div class="input-container">
+            <label class="label" for="full-name">Name*</label>
+            <input
+              class="input"
+              type="text"
+              name="full-name"
+              id="full-name"
+              placeholder="Enter your name"
+              pattern="[A-Za-z]+"
+              required
+            />
           </div>
-          <div class="logo-text-wrap">
-            <img class="logo-text" src="../Image/logo-text.svg" alt="Untitled UI" />
+
+          <div class="input-container">
+            <label class="label" for="email">Email*</label>
+            <input
+              class="input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
           </div>
+
+          <div class="input-container">
+            <label class="label" for="password">Password*</label>
+            <input
+              class="input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••"
+              required
+            />
+            <p class="information-text" id="password-length"></p>
+          </div>
+
+          <div class="input-container">
+            <label class="label" for="confirm-password"
+              >Confirm Password*</label
+            >
+            <input
+              class="input"
+              type="password"
+              name="confirm-password"
+              id="confirm-password"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <div class="input-container">
+            <label class="label" for="date-of-birth">Date of Birth*</label>
+            <input
+              class="input"
+              type="Date"
+              name="date-of-birth"
+              id="date-of-birth"
+            />
+          </div>
+
+          <div class="input-container">
+            <label class="label" for="male">Gender*</label>
+            <fieldset class="input form-field-group" id="gender">
+              <div>
+                <input type="radio" name="gender" id="male" value="male" />
+                <label for="male">Male</label>
+              </div>
+              <div>
+                <input type="radio" name="gender" id="female" value="female" />
+                <label for="female">Female</label>
+              </div>
+              <div>
+                <input type="radio" name="gender" id="other" value="other" />
+                <label for="other">Other</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="input-container">
+            <label for="city-select" class="label">Select a City*</label>
+            <select id="city-select" class="input select">
+              <option value="kathmandu" selected>Kathmandu</option>
+              <option value="pokhara">Pokhara</option>
+              <option value="biratnagar">Biratnagar</option>
+              <option value="dharan">Dharan</option>
+              <option value="bharatpur">Bharatpur</option>
+              <option value="butwal">Butwal</option>
+              <option value="nepalgunj">Nepalgunj</option>
+              <option value="hetauda">Hetauda</option>
+              <option value="itahari">Itahari</option>
+              <option value="janakpur">Janakpur</option>
+            </select>
+          </div>
+
+          <div class="input-container">
+            <label for="description" class="label">Description*</label>
+            <textarea
+              class="input text-area"
+              name="description"
+              id="description"
+              cols="30"
+              rows="5"
+              placeholder="Describe Yourself"
+            ></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Create account</button>
+        </form>
+
+        <a class="anchor-tag btn social-media-btn btn-outline" href="#"
+          ><img src="../Image/Social icon.svg" alt="google" /> Sign up with
+          Google
         </a>
-        <!-- nav menu -->
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a class="anchor-tag" href="#">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="anchor-tag" href="#">
-              Product
-              <img class="dropdown-icon" src="../Image/dropdownicon.svg" alt="Dropdown Icon" />
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="anchor-tag" href="#">Resources
-              <img class="dropdown-icon" src="../Image/dropdownicon.svg" alt="Dropdown Icon" />
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="anchor-tag" href="#">Pricing</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- hambergur button -->
-      <button class="nostyle-btn" aria-label="Menu">
-        <img class="hamburger-icon" src="../Image/hamburgerIcon.svg" alt="Hamburger Icon" />
-      </button>
-
-      <!-- call to action button -->
-      <div class="cta-buttons">
-        <a class="anchor-tag" href="index.html">Login</a>
-        <a class="anchor-tag btn btn-primary" href="signup.html">Signup</a>
-      </div>
-    </section>
-  </header>
-  <!-- Ending of Header of the Website -->
-
-  <!-- Start of the main Content -->
-  <main class="main">
-    <section class="section">
-      <!-- Heading section  -->
-      <div class="heading-section signup-heading-section">
-        <img class="content-logo" src="../Image/Logo.svg" alt="content logo" />
-        <h2 class="heading">Create an account</h2>
-        <p class="subheading">Start your 30-day free trial</p>
-      </div>
-
-      <form class="form" id="signup-form">
-        <div class="input-container">
-          <label class="label" for="full-name">Name*</label>
-          <input class="input" type="text" name="full-name" id="full-name" placeholder="Enter your name" required />
+        <div class="existing-account">
+          <p class="information-text">
+            Already have an account?
+            <a class="anchor-tag primary-anchor-tag" href="index.html"
+              >Log in</a
+            >
+          </p>
         </div>
-
-        <div class="input-container">
-          <label class="label" for="email">Email*</label>
-          <input class="input" type="email" name="email" id="email" placeholder="Enter your email" required />
-        </div>
-
-        <div class="input-container">
-          <label class="label" for="password">Password*</label>
-          <input class="input" type="password" name="password" id="password" placeholder="••••••••" required />
-          <p class="information-text " id="password-length"></p>
-        </div>
-
-        <div class="input-container">
-          <label class="label" for="confirm-password">Confirm Password*</label>
-          <input class="input" type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
-            required />
-        </div>
-
-        <div class="input-container">
-          <label class="label" for="date-of-birth">Date of Birth*</label>
-          <input class="input" type="Date" name="date-of-birth" id="date-of-birth" />
-        </div>
-
-        <div class="input-container">
-          <label class="label" for="male">Gender*</label>
-          <fieldset class="input form-field-group" id="gender">
-            <div>
-              <input type="radio" name="gender" id="male" value="male" />
-              <label for="male">Male</label>
-            </div>
-            <div>
-              <input type="radio" name="gender" id="female" value="female" />
-              <label for="female">Female</label>
-            </div>
-            <div>
-              <input type="radio" name="gender" id="other" value="other" />
-              <label for="other">Other</label>
-            </div>
-          </fieldset>
-        </div>
-
-        <div class="input-container">
-          <label for="city-select" class="label">Select a City*</label>
-          <select id="city-select" class="input select">
-            <option value="kathmandu" selected>Kathmandu</option>
-            <option value="pokhara">Pokhara</option>
-            <option value="biratnagar">Biratnagar</option>
-            <option value="dharan">Dharan</option>
-            <option value="bharatpur">Bharatpur</option>
-            <option value="butwal">Butwal</option>
-            <option value="nepalgunj">Nepalgunj</option>
-            <option value="hetauda">Hetauda</option>
-            <option value="itahari">Itahari</option>
-            <option value="janakpur">Janakpur</option>
-          </select>
-        </div>
-
-        <div class="input-container">
-          <label for="description" class="label">Description*</label>
-          <textarea class="input text-area" name="description" id="description" cols="30" rows="5"
-            placeholder="Describe Yourself"></textarea>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Create account</button>
-      </form>
-
-      <a class="anchor-tag btn social-media-btn btn-outline" href="#"><img src="../Image/Social icon.svg"
-          alt="google" /> Sign up
-        with Google
-      </a>
-      <div class="existing-account">
-        <p class="information-text">
-          Already have an account?
-          <a class="anchor-tag primary-anchor-tag" href="index.html">Log in</a>
-        </p>
-      </div>
-    </section>
-  </main>
-  <script src="../javascript//authentication.js"></script>
-</body>
-
+      </section>
+    </main>
+    <script src="../javascript//authentication.js"></script>
+  </body>
 </html>

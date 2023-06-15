@@ -53,10 +53,6 @@
   margin-bottom: 16px;
 }
 
-
-
-
-
 .forgot-password-checkbox-container {
   display: flex;
   margin-bottom: 24px;
@@ -86,8 +82,6 @@
   gap: 20px;
   padding-left: 0px;
 }
-
-
 
 .social-media-btn {
   display: flex;
@@ -120,7 +114,3 @@
     justify-content: center;
   }
 }
-
-/*------------- for laptop view:--------------- */
-
-@media only screen and (min-width: 1024px) {}

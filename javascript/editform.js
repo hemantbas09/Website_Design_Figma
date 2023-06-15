@@ -1,18 +1,22 @@
+"use strict";
+
+const sidebarElement = document.getElementById("sidebar");
+const openNav = document.getElementById("open-nav");
+const closeNav = document.getElementById("close-nav");
 const form = document.querySelector("#form");
 // access all the data from the backend:
 
-
-const localStorageData = localStorage.getItem("personaldetailsArray")
+const localStorageData = localStorage.getItem("personaldetailsArray");
 const personalDetails = JSON.parse(localStorageData);
 
 // get the url path of the update page:
-let ulrPath = window.location.href
+let ulrPath = window.location.href;
 
 // extract the the id from the url:
-let id = ulrPath.split("?")[1]
+let id = ulrPath.split("?")[1];
 
 // extract the data from the local storage bu using id:
-let personalDetail = personalDetails[id]
+let personalDetail = personalDetails[id];
 
 const formHTML = `<div>
 <div class="input-container setting-input-container bigscreen-name-section">
@@ -179,9 +183,9 @@ const formHTML = `<div>
     <button class="btn btn-outline">Cancel</button>
     <button id="submit-btn" type="submit" class="btn btn-primary">Save</button>
 </div>
-</div>`
+</div>`;
 
-form.innerHTML += formHTML
+form.innerHTML += formHTML;
 
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
@@ -194,51 +198,75 @@ const textType = document.querySelector("select[name='text-type']");
 const bio = document.getElementById("textarea");
 const profileimageElement = document.getElementById("profile-imageElement");
 
-
 let imageURL;
 
 profilePicture.addEventListener("change", (e) => {
-    // Access the selected files:
-    let selectedImage = e.target.files[0];
+  // Access the selected files:
+  let selectedImage = e.target.files[0];
 
-    if (selectedImage) {
-        // Create an instance of the FileReader:
-        let reader = new FileReader();
+  if (selectedImage) {
+    // Create an instance of the FileReader:
+    let reader = new FileReader();
 
-        // Read the selected file as a data URL:
-        reader.readAsDataURL(selectedImage);
+    // Read the selected file as a data URL:
+    reader.readAsDataURL(selectedImage);
 
-        // Create the reader callback function:
-        reader.onload = function () {
-            // Update the source of the image:
-            imageURL = reader.result;
-            profileimageElement.src = imageURL;
-        };
-    }
+    // Create the reader callback function:
+    reader.onload = function () {
+      // Update the source of the image:
+      imageURL = reader.result;
+      profileimageElement.src = imageURL;
+    };
+  }
 });
 
 form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Change the existing value to update the data:
-    personalDetail.firstName = firstName.value;
-    personalDetail.lastName = lastName.value;
-    personalDetail.email = email.value;
-    personalDetail.profilePicture = imageURL || personalDetail.profilePicture;
-    personalDetail.role = role.value;
-    personalDetail.country = country.value;
-    personalDetail.timezone = timezone.value;
-    personalDetail.textType = textType.value;
-    personalDetail.bio = bio.value;
+  // Change the existing value to update the data:
+  personalDetail.firstName = firstName.value;
+  personalDetail.lastName = lastName.value;
+  personalDetail.email = email.value;
+  personalDetail.profilePicture = imageURL || personalDetail.profilePicture;
+  personalDetail.role = role.value;
+  personalDetail.country = country.value;
+  personalDetail.timezone = timezone.value;
+  personalDetail.textType = textType.value;
+  personalDetail.bio = bio.value;
 
-    // Convert array to a string:
-    const dataArrayString = JSON.stringify(personalDetails);
+  // Convert array to a string:
+  const dataArrayString = JSON.stringify(personalDetails);
 
-    // Store in the local storage:
-    localStorage.setItem("personaldetailsArray", dataArrayString);
+  // Store in the local storage:
+  localStorage.setItem("personaldetailsArray", dataArrayString);
 
-    window.location.href = "dashboard.html";
+  window.location.href = "dashboard.html";
 });
 
+// Hamburger Menu event listeners
+openNav.addEventListener("click", function () {
+  sidebarElement.style.display = "block";
+  header.style.display = "none";
+  dashboard.style.setProperty("--navColor", "rgba(181, 178, 178, 0.2)");
+  dashboard.style.position = "fixed";
+});
 
+closeNav.addEventListener("click", function () {
+  sidebarElement.style.display = "none";
+  header.style.display = "block";
+  dashboard.style.setProperty("--navColor", "transparent");
+  dashboard.style.position = "relative";
+});
 
+// Resize event listener for responsive behavior
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 1024) {
+    sidebarElement.style.display = "block";
+    dashboard.style.setProperty("--navColor", "transparent");
+    dashboard.style.position = "relative";
+    header.style.display = "none";
+  } else {
+    sidebarElement.style.display = "none";
+    header.style.display = "block";
+  }
+});

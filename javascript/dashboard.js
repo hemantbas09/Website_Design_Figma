@@ -1,9 +1,10 @@
+"use strict";
 // Get element references
-const header = document.getElementById('header');
+const header = document.getElementById("header");
 const tableBody = document.querySelector("#tablebody");
-const sidebarElement = document.getElementById('sidebar');
-const openNav = document.getElementById('open-nav');
-const closeNav = document.getElementById('close-nav');
+const sidebarElement = document.getElementById("sidebar");
+const openNav = document.getElementById("open-nav");
+const closeNav = document.getElementById("close-nav");
 const form = document.getElementById("form");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
@@ -21,11 +22,12 @@ const nextBtn = document.getElementById("next-btn");
 const searchInput = document.getElementById("search");
 const dashboard = document.getElementById("dashboard");
 const totalUser = document.getElementById("total-user");
-const currentPageElement = document.getElementById('current-page');
-const totalPageElement = document.getElementById('total-page');
-const mobileFirstName = document.getElementById('mobile-first-name');
-const mobileLastName = document.getElementById('mobile-last-name')
-
+const currentPageElement = document.getElementById("current-page");
+const totalPageElement = document.getElementById("total-page");
+const mobileFirstName = document.getElementById("mobile-first-name");
+const mobileLastName = document.getElementById("mobile-last-name");
+const userName = document.getElementById("user-name");
+const userEmail = document.getElementById("user-email");
 
 // Get data from local storage and parse it
 const localStorageData = localStorage.getItem("personaldetailsArray");
@@ -35,31 +37,37 @@ const personalDetails = JSON.parse(localStorageData) || [];
 let ulrPath = window.location.href;
 let id = ulrPath.split("?")[1];
 
+const urlParams = new URLSearchParams(window.location.search);
+let adminName = urlParams.get("name");
+let adminEmail = urlParams.get("email");
+userName.innerHTML = adminName;
+userEmail.innerHTML = adminEmail;
+
 // Hamburger Menu event listeners
-openNav.addEventListener('click', function () {
-  sidebarElement.style.display = 'block';
-  header.style.display = 'none';
-  dashboard.style.setProperty('--navColor', 'rgba(181, 178, 178, 0.2)');
-  dashboard.style.position = 'fixed';
+openNav.addEventListener("click", function () {
+  sidebarElement.style.display = "block";
+  header.style.display = "none";
+  dashboard.style.setProperty("--navColor", "rgba(181, 178, 178, 0.2)");
+  dashboard.style.position = "fixed";
 });
 
-closeNav.addEventListener('click', function () {
-  sidebarElement.style.display = 'none';
-  header.style.display = 'block';
-  dashboard.style.setProperty('--navColor', 'transparent');
-  dashboard.style.position = 'relative';
+closeNav.addEventListener("click", function () {
+  sidebarElement.style.display = "none";
+  header.style.display = "block";
+  dashboard.style.setProperty("--navColor", "transparent");
+  dashboard.style.position = "relative";
 });
 
 // Resize event listener for responsive behavior
-window.addEventListener('resize', function () {
+window.addEventListener("resize", function () {
   if (window.innerWidth > 1024) {
-    sidebarElement.style.display = 'block';
-    dashboard.style.setProperty('--navColor', 'transparent');
-    dashboard.style.position = 'relative';
-    header.style.display = 'none';
+    sidebarElement.style.display = "block";
+    dashboard.style.setProperty("--navColor", "transparent");
+    dashboard.style.position = "relative";
+    header.style.display = "none";
   } else {
-    sidebarElement.style.display = 'none';
-    header.style.display = 'block';
+    sidebarElement.style.display = "none";
+    header.style.display = "block";
   }
 });
 
@@ -79,39 +87,35 @@ if (profilePicture) {
     };
   });
 
-
-
   // Form submit event listener
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    
 
-     const personaldetails = {
-        firstName: firstName.value,
-        lastName: lastName.value,
-        email: email.value,
-        profilePicture: imageURL,
-        role: role.value,
-        country: country.value,
-        timezone: timezone.value,
-        bio: bio.value,
-        textType: textType.value
-      };
+    const personaldetails = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      profilePicture: imageURL,
+      role: role.value,
+      country: country.value,
+      timezone: timezone.value,
+      bio: bio.value,
+      textType: textType.value,
+    };
 
+    let dataArray = [];
 
-  let dataArray = [];
+    const existingData = localStorage.getItem("personaldetailsArray");
+    if (existingData) {
+      dataArray = JSON.parse(existingData);
+    }
 
-  const existingData = localStorage.getItem("personaldetailsArray");
-  if (existingData) {
-    dataArray = JSON.parse(existingData);
-  }
+    dataArray.push(personaldetails);
+    localStorage.setItem("personaldetailsArray", JSON.stringify(dataArray));
 
-  dataArray.push(personaldetails);
-  localStorage.setItem("personaldetailsArray", JSON.stringify(dataArray));
-
-  form.reset();
-  window.location.href = 'dashboard.html';
-});
+    form.reset();
+    window.location.href = "dashboard.html";
+  });
 }
 
 let currentPage = 1;
@@ -119,7 +123,7 @@ let numberPerPage = 2;
 let totalPages;
 
 // Previous button click event listener
-previousBtn.addEventListener('click', (e) => {
+previousBtn.addEventListener("click", (e) => {
   e.preventDefault();
   currentPage -= 1;
   updatePagination();
@@ -128,7 +132,7 @@ previousBtn.addEventListener('click', (e) => {
 });
 
 // Next button click event listener
-nextBtn.addEventListener('click', (e) => {
+nextBtn.addEventListener("click", (e) => {
   e.preventDefault();
   currentPage += 1;
   updatePagination();
@@ -159,7 +163,8 @@ searchInput.addEventListener("input", () => {
   filterData = [];
   searchQuery = searchInput.value.toLowerCase();
   personalDetails.forEach((personalDetail, index) => {
-    let storeFirstName = `${personalDetail.firstName} ${personalDetail.lastName}`.toLowerCase();
+    let storeFirstName =
+      `${personalDetail.firstName} ${personalDetail.lastName}`.toLowerCase();
     if (searchQuery && storeFirstName.includes(searchQuery)) {
       filterData.push(personalDetails[index]);
     }
@@ -177,7 +182,7 @@ function renderTable() {
   totalPageElement.innerHTML = totalPages;
 
   if (dataToDisplay.length > 0) {
-    tableBody.innerHTML = '';
+    tableBody.innerHTML = "";
 
     for (let i = 0; i < dataToDisplay.length; i++) {
       const data = dataToDisplay[i];
@@ -186,11 +191,17 @@ function renderTable() {
                       <div class="table-titlebox">
                         <input class="table-chechkbox thead-checkbox" type="checkbox">
                         <div class="profile-image-wrapper">
-                            <img class="profile-image" src=${data.profilePicture} alt="profile">
+                            <img class="profile-image" src=${
+                              data.profilePicture
+                            } alt="profile">
                         </div>
                         <div>
-                          <h2 class="table-title">${data.firstName} ${data.lastName}</h2>
-                          <h3 id="checkmate" class="company-about">${data.email}</h3>
+                          <h2 class="table-title">${data.firstName} ${
+        data.lastName
+      }</h2>
+                          <h3 id="checkmate" class="company-about">${
+                            data.email
+                          }</h3>
                         </div>
                       </div>
                     </td>
@@ -244,37 +255,42 @@ function renderTable() {
                           <img src="../Image/delete-icon.svg"   alt="delete-icon">
                         </button>
   
-                        <a href="./formedit.html?${id = i}">
+                        <a href="./formedit.html?${(id = i)}">
                           <img src="../Image/edit-icon.svg" alt="edit-icon">
                        </a>                      
                       </div>
   
                     </td>
-                  </tr>`
+                  </tr>`;
 
       tableBody.innerHTML += row;
     }
   } else {
-    tableBody.innerHTML = '<tr><td colspan="6" class="empty-table">No data available</td></tr>';
+    tableBody.innerHTML =
+      '<tr><td colspan="6" class="empty-table">No data available</td></tr>';
   }
 }
 
 // Initial rendering of table
 updatePagination();
-searchInput.addEventListener('input', renderTable)
-
+searchInput.addEventListener("input", renderTable);
 
 // Total user in the Table:
-totalUser.innerHTML = personalDetails.length
+totalUser.innerHTML = personalDetails.length;
 
 // Delete the Data:
 let deleteData = (id) => {
   if (confirm("Are you sure?")) {
-    let personalDetails = JSON.parse(localStorage.getItem("personaldetailsArray"));
+    let personalDetails = JSON.parse(
+      localStorage.getItem("personaldetailsArray")
+    );
     personalDetails.splice(id, 1);
-    localStorage.setItem("personaldetailsArray", JSON.stringify(personalDetails));
+    localStorage.setItem(
+      "personaldetailsArray",
+      JSON.stringify(personalDetails)
+    );
     window.location.reload();
   } else {
     alert("Wait a minute, who are you?");
   }
-}
+};

@@ -1,9 +1,8 @@
-// "use strict"
+"use strict";
 
-// access all the html element:
+const openNav = document.getElementById("open-nav");
+const closeNav = document.getElementById("close-nav");
 const form = document.getElementById("form");
-const editForm = document.getElementById("edit-form");
-
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
 const email = document.getElementById("email");
@@ -13,27 +12,52 @@ const country = document.querySelector("select[name='country']");
 const timezone = document.querySelector("select[name='timezone']");
 const textType = document.querySelector("select[name='text-type']");
 const bio = document.getElementById("textarea");
-const textCount = document.getElementById("text-count")
-const textarea = document.getElementById("textarea-container")
-const profileimageElement = document.getElementById("profile-imageElement")
-const textBold = document.getElementById("font-bold")
-const textItalic = document.getElementById("font-italic")
-const sidebarElement = document.getElementById('sidebar')
+const textCount = document.getElementById("text-count");
+const textarea = document.getElementById("textarea-container");
+const profileimageElement = document.getElementById("profile-imageElement");
+const textBold = document.getElementById("font-bold");
+const textItalic = document.getElementById("font-italic");
+const sidebarElement = document.getElementById("sidebar");
+const textUnorderList = document.getElementById("text-unorderlist");
+const textOrderList = document.getElementById("text-orderlist");
+const validationMessage = document.getElementById("validation-message");
+const roleValidationMessage = document.getElementById(
+  "role-validation-message"
+);
 
-// const textBold= document.getElementById("")
+// Hamburger Menu event listeners
+openNav.addEventListener("click", function () {
+  sidebarElement.style.display = "block";
+  header.style.display = "none";
+  dashboard.style.setProperty("--navColor", "rgba(181, 178, 178, 0.2)");
+  dashboard.style.position = "fixed";
+});
 
-const textUnorderList = document.getElementById("text-unorderlist")
+closeNav.addEventListener("click", function () {
+  sidebarElement.style.display = "none";
+  header.style.display = "block";
+  dashboard.style.setProperty("--navColor", "transparent");
+  dashboard.style.position = "relative";
+});
 
-const textOrderList = document.getElementById("text-orderlist")
-
+// Resize event listener for responsive behavior
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 1024) {
+    sidebarElement.style.display = "block";
+    dashboard.style.setProperty("--navColor", "transparent");
+    dashboard.style.position = "relative";
+    header.style.display = "none";
+  } else {
+    sidebarElement.style.display = "none";
+    header.style.display = "block";
+  }
+});
 
 let imageURL;
-
 profilePicture.addEventListener("change", (e) => {
-
   // Access the Selected Files:
   let selectedImage = e.target.files[0];
-  console.log(e.target.files)
+
   // Create a instance of the FileReader:
   let reader = new FileReader();
 
@@ -42,21 +66,15 @@ profilePicture.addEventListener("change", (e) => {
 
   // create the reader callback function:
   reader.onload = function () {
-
     // Update the source of the image:
-    imageURL = reader.result
+    imageURL = reader.result;
     profileimageElement.src = imageURL;
-  }
-})
-
-
+  };
+});
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log("This is profile picture path", profilePicture.value)
-  // store the data by making a object
-  // image.target.files[0]
-  // console.log("this is what", imageUpload(image.target.files[0]))
+
   const personaldetails = {
     firstName: firstName.value,
     lastName: lastName.value,
@@ -66,7 +84,7 @@ form.addEventListener("submit", function (e) {
     country: country.value,
     timezone: timezone.value,
     bio: bio.value,
-    textType: textType.value
+    textType: textType.value,
   };
 
   // Check if the data is existing in the local storage or not:
@@ -92,60 +110,66 @@ form.addEventListener("submit", function (e) {
 
   form.reset();
 
-  window.location.href = 'dashboard.html'
-
-
+  window.location.href = "dashboard.html";
 });
 
+// Count the input text in the Bio Text area:
 bio.addEventListener("input", (e) => {
   let maximumCharacter = 275;
-  console.log(e)
-  let useDescriptionLength = (bio.value).length
-  let characterLeft = maximumCharacter - useDescriptionLength
-  textCount.innerHTML = characterLeft
-  console.log(characterLeft)
-})
+  console.log(e);
+  let useDescriptionLength = bio.value.length;
+  let characterLeft = maximumCharacter - useDescriptionLength;
+  textCount.innerHTML = characterLeft;
+  console.log(characterLeft);
+});
 
-// text bold:
+// make Bold input text in the Bio Text area:
 let isClick = true;
-
 textBold.addEventListener("click", () => {
+  isClick === true
+    ? (bio.style.fontWeight = "900")
+    : (bio.style.fontWeight = "500");
+  isClick = !isClick;
+});
 
-  (isClick === true ? bio.style.fontWeight = "900" : bio.style.fontWeight = "500")
-  isClick = !isClick
-})
-
+// make Italic input text in the Bio Text area:
 textItalic.addEventListener("click", () => {
-  (isClick === true ? bio.style.fontStyle = "Italic" : bio.style.fontStyle = "")
-  isClick = !isClick
-})
+  isClick === true
+    ? (bio.style.fontStyle = "Italic")
+    : (bio.style.fontStyle = "");
+  isClick = !isClick;
+});
 
+// make Italic input text in the Bio Text area:
 textUnorderList.addEventListener("click", () => {
-  bio.style.background = "green"
+  bio.style.background = "green";
+});
 
-  // (isClick ? bio.style.background = "green" : bio.style.background = "green")
-
-})
-
+// make Italic input text in the Bio Text area:
 textOrderList.addEventListener("click", () => {
-  bio.style.background = "pink"
-})
+  bio.style.background = "pink";
+});
 
+firstName.addEventListener("input", () => {
+  if (!firstName.value) {
+    validationMessage.style.opacity = 0;
+  } else if (!/^[a-zA-Z]+$/.test(firstName.value)) {
+    validationMessage.style.opacity = 1;
+  }
+});
 
-let sidebarValue = true;
-const mediaQuery = window.matchMedia('(max-width: 1024px)')
-const sidebar = () => {
+lastName.addEventListener("input", () => {
+  if (!lastName.value) {
+    validationMessage.style.opacity = 0;
+  } else if (!/^[a-zA-Z]+$/.test(lastName.value)) {
+    validationMessage.style.opacity = 1;
+  }
+});
 
-  (sidebarValue ?
-    sidebarElement.style.display = 'block'
-    :
-    sidebarElement.style.display = 'none'
-  )
-  sidebarValue = !sidebarValue;
-}
-
-window.addEventListener('resize', (e) => {
-  if (mediaQuery) {
-    sidebarElement.style.display = 'block'
+role.addEventListener("input", () => {
+  if (!role.value) {
+    roleValidationMessage.style.opacity = 0;
+  } else if (!/^[a-zA-Z]+$/.test(role.value)) {
+    roleValidationMessage.style.opacity = 1;
   }
 });
