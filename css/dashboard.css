@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .dashboard {
   max-width: 2000px;
   margin: auto;
@@ -182,14 +186,6 @@
   flex-direction: column;
   justify-content: start;
 }
-
-/* .dashboard-main::before {
-    content: "";
-    width: 100%;
-    height: 100vh;
-    background-color: var(--navColor);
-    position: absolute;
-} */
 
 .dashboard-heading-container {
   padding: 0px 16px 32px 16px;
@@ -548,7 +544,12 @@ td {
   .sidebar {
     display: inline;
   }
-
+  .dashboard-heading-container {
+    padding: 0px 16px 32px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .headerwith-sidebar {
     display: none;
   }
