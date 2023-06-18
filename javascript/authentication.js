@@ -11,6 +11,8 @@ const citySelect = document.getElementById("city-select");
 const descriptionTextArea = document.getElementById("description");
 const passwordLength = document.getElementById("password-length");
 const genderInput = document.getElementsByName("gender");
+const dropdown = document.getElementById("dropdown-container");
+const productDropdown = document.getElementById("product-dropdown");
 
 // Extract the data from the local Storage:
 const extractAuthData = localStorage.getItem("authentication");
@@ -135,3 +137,22 @@ function login() {
     alert("Email and Password did not match");
   }
 }
+
+// dropdown:
+
+if (productDropdown) {
+  productDropdown.addEventListener("click", () => {
+    if (dropdown.style.display === "inline") {
+      dropdown.style.display = "none";
+    } else {
+      dropdown.style.display = "inline";
+    }
+  });
+}
+
+// close drop down if click in the outside:
+window.onclick = function (e) {
+  if (e.target !== productDropdown) {
+    dropdown.style.display = "none";
+  }
+};
