@@ -58,7 +58,6 @@ closeNav.addEventListener("click", function () {
   dashboard.style.position = "relative";
 });
 
-// Resize event listener for responsive behavior
 window.addEventListener("resize", function () {
   if (window.innerWidth > 1024) {
     sidebarElement.style.display = "block";

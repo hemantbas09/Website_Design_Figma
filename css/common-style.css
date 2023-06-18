@@ -158,14 +158,9 @@ li {
   display: none;
 }
 .dropdown-menu {
-  /* padding: 6px 16px; */
-  /* border-radius: 8px; */
   margin-bottom: 5px;
 }
 
-.dropdown-menu:hover {
-  /* background-color: #eaeaf0; */
-}
 /*----------------------------------- Form Style-------------------------- */
 
 .input-container {
