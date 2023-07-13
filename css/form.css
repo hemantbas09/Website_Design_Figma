@@ -1,0 +1,308 @@
+a {
+  text-decoration: none;
+}
+
+.setting-navmenu {
+  display: none;
+}
+
+.select {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+
+.default-option .icon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.select-ul {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: lightcoral;
+  display: none;
+  z-index: 1;
+}
+
+.heading {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #101828;
+}
+
+.text-standard {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667085;
+}
+
+.secondary-input::placeholder {
+  color: #101828;
+}
+
+.setting-input-container {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.upload-file-heading {
+  margin-bottom: 20px;
+}
+
+.select-dropdown {
+  width: 10px;
+  height: 5px;
+  position: absolute;
+  top: 10px;
+  right: 19px;
+}
+
+.select-dropdown > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.select-option {
+  width: 100%;
+  padding: 10px 0px 10px 14px;
+}
+
+.select-ul .select-option:hover {
+  background-color: #eff0f0;
+  border-radius: 8px;
+}
+
+.icon-input-container > img {
+  width: 16px;
+  height: 14px;
+}
+
+.mobile-name {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#lg-screen-name {
+  display: none;
+}
+
+.file {
+  color: transparent;
+  border: 1px dashed #eaecf0;
+  height: 126px;
+}
+
+.file-container {
+  position: relative;
+}
+
+.setting-info {
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.file-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding-top: 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 330px;
+}
+
+.file::file-selector-button {
+  background-color: #ffffff;
+  padding: 24px;
+  visibility: hidden;
+}
+
+.setting-heading {
+  margin-bottom: 24px;
+}
+
+.setting-input {
+  color: #101828;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  appearance: none;
+}
+
+.setting-input option {
+  appearance: none;
+  color: #101828;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.setting-textarea {
+  padding: 3px;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.formimage-container {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.text-area-icon {
+  margin-bottom: 25px;
+  padding-left: 8px;
+}
+
+.text-area-icon > a {
+  margin-right: 20px;
+}
+
+.formimage-container > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 200px;
+}
+
+.formcta-button {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+
+.input-container-content {
+  position: relative;
+}
+
+.project-upload-container {
+  margin-bottom: 20px;
+}
+
+#first-name {
+  margin-bottom: 20px;
+}
+
+#validation-message,#role-validation-message {
+  color: red;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .setting-navmenu {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    border-bottom: 1px solid #eaecf0;
+    margin-bottom: 32px;
+  }
+
+  .setting-navitem {
+    padding-bottom: 16px;
+  }
+
+  .setting-navitem:active > a {
+    color: #6941c6;
+  }
+
+  .setting-navitem:active {
+    box-shadow: 0px 2px 0px #6941c6;
+  }
+
+  .select {
+    display: none;
+  }
+
+  #lg-screen-name {
+    display: inline;
+  }
+
+  .input-width-fixed {
+    width: 50%;
+  }
+
+  .check {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    color: #344054;
+    margin-left: 8px;
+    background: #f2f4f7;
+    border-radius: 16px;
+    padding: 2px 8px;
+  }
+
+  .setting-label {
+    width: 280px;
+  }
+
+  .setting-fullName {
+    display: flex;
+    flex: 50%;
+    gap: 24px;
+  }
+
+  .full-name {
+    max-width: 244px;
+  }
+
+  .text-formatting-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
+  }
+
+  .setting-input-container {
+    flex-direction: row;
+  }
+
+  .text-type {
+    min-width: 240px;
+  }
+
+  #mobile-label {
+    display: none;
+  }
+
+  .mobile-name {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  #first-name {
+    margin-bottom: 0px;
+  }
+
+  .input-container-content {
+    width: 100%;
+    max-width: 512px;
+    position: relative;
+  }
+
+  #validation-message,#role-validation-message {
+    color: red;
+    margin-left: 20px;
+    margin-top: 0px;
+  }
+}

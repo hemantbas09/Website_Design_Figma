@@ -1,0 +1,116 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*------------------- login Section----------------- */
+
+.section {
+  padding: 48px 16px 212px 16px;
+  width: 100%;
+  max-width: 392px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 48px 0px 32px 0px;
+}
+
+.content-logo {
+  margin-bottom: 24px;
+}
+
+.signup-heading-section {
+  align-items: start;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 8px;
+
+}
+
+.subheading {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--gray);
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.forgot-password-checkbox-container {
+  display: flex;
+  margin-bottom: 24px;
+  justify-content: space-between;
+}
+
+.checkbox-container {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.select option {
+  background-color: transparent;
+}
+
+.form-field-group {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border: none;
+  gap: 20px;
+  padding-left: 0px;
+}
+
+.social-media-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.existing-account {
+  align-self: center;
+}
+
+.information-text {
+  margin-top: 6px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray);
+}
+
+/* For tablet view: */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .login-container {
+    align-items: start;
+  }
+
+  .heading-section {
+    align-items: start;
+    justify-content: center;
+  }
+}
